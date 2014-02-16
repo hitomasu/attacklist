@@ -5,6 +5,6 @@ cd `dirname $0`
 
 echo ""
 echo "==============================================================================="
-echo "                                                         Install 'Base' project"
+echo "                                                         Install 'Common' project"
 echo "                                                         ======================"
 mvn -e install

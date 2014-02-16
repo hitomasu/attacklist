@@ -5,6 +5,6 @@ cd `dirname $0`
 
 echo ""
 echo "==============================================================================="
-echo "                                          Maven eclipse:eclipse 'Front' project"
+echo "                                          Maven eclipse:eclipse 'Common' project"
 echo "                                                         ======================"
 mvn -e eclipse:eclipse

@@ -1,0 +1,1437 @@
+2014-02-16 19:06:49,722 [main] INFO  (DfReplaceSchemaTask#begin():87) - +------------------------------------------+
+2014-02-16 19:06:49,730 [main] INFO  (DfReplaceSchemaTask#begin():88) - |                                          |
+2014-02-16 19:06:49,731 [main] INFO  (DfReplaceSchemaTask#begin():89) - |              ReplaceSchema               |
+2014-02-16 19:06:49,749 [main] INFO  (DfReplaceSchemaTask#begin():97) - |                                          |
+2014-02-16 19:06:49,750 [main] INFO  (DfReplaceSchemaTask#begin():98) - +------------------------------------------+
+2014-02-16 19:06:49,751 [main] INFO  (DfReplaceSchemaTask#waitBeforeReps():329) - ...Waiting for your GO SIGN from stdin before ReplaceSchema:
+2014-02-16 19:06:58,292 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2014-02-16 19:06:58,293 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2014-02-16 19:06:58,294 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/attacklistdb
+2014-02-16 19:06:58,295 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = root
+2014-02-16 19:06:58,308 [main] INFO  (DfDataSourceHandler#createConnection():168) - ...Connecting to database by data source:
+2014-02-16 19:06:58,542 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():235) -   product = MySQL 5.6.14
+2014-02-16 19:06:58,543 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():236) -   driver  = MySQL Connector Java mysql-connector-java-5.1.26 ( Revision: ${bzr.revision-id} ) for JDBC 4.0
+2014-02-16 19:06:58,561 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():207) - 
+2014-02-16 19:06:58,563 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():208) - * * * * * * * * * * *
+2014-02-16 19:06:58,564 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():209) - *                   *
+2014-02-16 19:06:58,566 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():210) - * Initialize Schema *
+2014-02-16 19:06:58,567 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():211) - *                   *
+2014-02-16 19:06:58,568 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():212) - * * * * * * * * * * *
+2014-02-16 19:06:58,584 [main] INFO  (DfTableExtractor#doGetTableList():67) - ...Getting tables:
+2014-02-16 19:06:58,607 [main] INFO  (DfTableExtractor#doGetTableList():68) -   schema = {attacklistdb.$$NoNameSchema$$ as main}
+2014-02-16 19:06:58,609 [main] INFO  (DfTableExtractor#doGetTableList():69) -   types  = [TABLE, VIEW]
+2014-02-16 19:06:58,641 [main] INFO  (DfCreateSchemaProcess#createSchema():244) - 
+2014-02-16 19:06:58,641 [main] INFO  (DfCreateSchemaProcess#createSchema():245) - * * * * * * * * *
+2014-02-16 19:06:58,642 [main] INFO  (DfCreateSchemaProcess#createSchema():246) - *               *
+2014-02-16 19:06:58,643 [main] INFO  (DfCreateSchemaProcess#createSchema():247) - * Create Schema *
+2014-02-16 19:06:58,643 [main] INFO  (DfCreateSchemaProcess#createSchema():248) - *               *
+2014-02-16 19:06:58,644 [main] INFO  (DfCreateSchemaProcess#createSchema():249) - * * * * * * * * *
+2014-02-16 19:06:58,648 [main] INFO  (DfSqlFileFireMan#fire():65) - ...Firing: replace-schema.sql
+2014-02-16 19:06:58,650 [main] INFO  (DfSqlFileRunnerBase#traceSql():168) - 
+CREATE TABLE MEMBER
+(
+	MEMBER_ID BIGINT NOT NULL AUTO_INCREMENT COMMENT '���ID',
+	MAIL_ADDRESS VARCHAR(250) NOT NULL UNIQUE COMMENT '���[���A�h���X',
+	PRIMARY KEY (MEMBER_ID)
+) COMMENT = '���'
+2014-02-16 19:06:58,714 [main] INFO  (DfSqlFileRunnerBase#traceResult():172) -  -> success=1 failure=0
+2014-02-16 19:06:58,715 [main] INFO  (DfSqlFileFireMan#fire():90) - {Create Schema}: success=1 failure=0 (in 1 files)
+2014-02-16 19:06:58,751 [main] INFO  (DfLoadDataProcess#execute():129) - 
+2014-02-16 19:06:58,752 [main] INFO  (DfLoadDataProcess#execute():130) - * * * * * * * * * * *
+2014-02-16 19:06:58,753 [main] INFO  (DfLoadDataProcess#execute():131) - *                   *
+2014-02-16 19:06:58,753 [main] INFO  (DfLoadDataProcess#execute():132) - * Load Data         *
+2014-02-16 19:06:58,754 [main] INFO  (DfLoadDataProcess#execute():133) - *                   *
+2014-02-16 19:06:58,754 [main] INFO  (DfLoadDataProcess#execute():134) - * * * * * * * * * * *
+2014-02-16 19:06:58,776 [main] INFO  (DfTakeFinallyProcess#takeFinally():219) - 
+2014-02-16 19:06:58,776 [main] INFO  (DfTakeFinallyProcess#takeFinally():220) - * * * * * * * **
+2014-02-16 19:06:58,777 [main] INFO  (DfTakeFinallyProcess#takeFinally():221) - *              *
+2014-02-16 19:06:58,777 [main] INFO  (DfTakeFinallyProcess#takeFinally():222) - * Take Finally *
+2014-02-16 19:06:58,778 [main] INFO  (DfTakeFinallyProcess#takeFinally():223) - *              *
+2014-02-16 19:06:58,778 [main] INFO  (DfTakeFinallyProcess#takeFinally():224) - * * * * * * * **
+2014-02-16 19:06:58,784 [main] INFO  (DfSqlFileFireMan#fire():65) - ...Firing: take-finally.sql
+2014-02-16 19:06:58,785 [main] INFO  (DfSqlFileRunnerBase#traceResult():172) -  -> success=0 failure=0
+2014-02-16 19:06:58,786 [main] INFO  (DfSqlFileFireMan#fire():90) - {Take Finally}: success=0 failure=0 (in 1 files)
+2014-02-16 19:06:58,787 [main] INFO  (DfDataSourceHandler#destroy():121) - ...closeReally()
+2014-02-16 19:06:58,793 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():150) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m09s067ms
+
+  DBFLUTE_CLIENT: {attacklist-db}
+    database  = mysql (MySQL 5.6.14)
+    language  = java
+    container = seasar
+    package   = jp.attacklist.common.entity
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/attacklistdb
+    schema = {attacklistdb.$$NoNameSchema$$ as main}
+    user   = root
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = attacklist-common
+
+ {Create Schema}: success=1 failure=0 (in 1 files)
+  o replace-schema.sql
+
+ {Load Data}: loaded-files=0
+  - (no data file)
+
+ {Take Finally}: success=0 failure=0 (in 1 files)
+  o take-finally.sql
+_/_/_/_/_/_/_/_/_/_/ {ReplaceSchema}
+2014-02-16 19:06:59,417 [main] INFO  (TorqueJDBCTransformTask#begin():100) - +------------------------------------------+
+2014-02-16 19:06:59,418 [main] INFO  (TorqueJDBCTransformTask#begin():101) - |                                          |
+2014-02-16 19:06:59,419 [main] INFO  (TorqueJDBCTransformTask#begin():102) - |                   JDBC                   |
+2014-02-16 19:06:59,419 [main] INFO  (TorqueJDBCTransformTask#begin():103) - |                                          |
+2014-02-16 19:06:59,420 [main] INFO  (TorqueJDBCTransformTask#begin():104) - +------------------------------------------+
+2014-02-16 19:06:59,455 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2014-02-16 19:06:59,456 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2014-02-16 19:06:59,456 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/attacklistdb
+2014-02-16 19:06:59,457 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = root
+2014-02-16 19:06:59,497 [main] INFO  (DfSchemaXmlSerializer#serialize():286) - 
+2014-02-16 19:06:59,497 [main] INFO  (DfSchemaXmlSerializer#serialize():287) - ...Starting to process JDBC to SchemaXML
+2014-02-16 19:06:59,498 [main] INFO  (DfSchemaXmlSerializer#doLoadPreviousSchema():1463) - ...Loading previous schema (schema diff process)
+2014-02-16 19:06:59,499 [main] INFO  (DfSchemaXmlSerializer#doLoadPreviousSchema():1466) -  -> no previous (first time)
+2014-02-16 19:06:59,521 [main] INFO  (DfSchemaXmlSerializer#generateXML():361) - ...Getting DB connection
+2014-02-16 19:06:59,526 [main] INFO  (DfDataSourceHandler#createConnection():168) - ...Connecting to database by data source:
+2014-02-16 19:06:59,744 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():235) -   product = MySQL 5.6.14
+2014-02-16 19:06:59,745 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():236) -   driver  = MySQL Connector Java mysql-connector-java-5.1.26 ( Revision: ${bzr.revision-id} ) for JDBC 4.0
+2014-02-16 19:06:59,747 [main] INFO  (DfSchemaXmlSerializer#generateXML():364) - ...Getting DB meta data
+2014-02-16 19:06:59,750 [main] INFO  (DfTableExtractor#doGetTableList():67) - ...Getting tables:
+2014-02-16 19:06:59,751 [main] INFO  (DfTableExtractor#doGetTableList():68) -   schema = {attacklistdb.$$NoNameSchema$$ as main}
+2014-02-16 19:06:59,752 [main] INFO  (DfTableExtractor#doGetTableList():69) -   types  = [TABLE, VIEW]
+2014-02-16 19:06:59,760 [main] INFO  (DfDbCommentExtractorBase#doSelectUserTabComments():121) - select table_type as OBJECT_TYPE, table_name as TABLE_NAME, table_comment as COMMENTS from information_schema.tables where table_schema = 'attacklistdb' order by table_name asc
+2014-02-16 19:06:59,768 [main] INFO  (DfDbCommentExtractorBase#doSelectUserColComments():168) - select table_name as TABLE_NAME, column_name as COLUMN_NAME, column_comment as COMMENTS from information_schema.columns where table_schema = 'attacklistdb' order by table_name asc, column_name asc
+2014-02-16 19:06:59,785 [main] INFO  (DfSchemaXmlSerializer#processTable():421) - 
+2014-02-16 19:06:59,786 [main] INFO  (DfSchemaXmlSerializer#processTable():422) - $ /= = = = = = = = = = = = = = = = = = = = = = = = = =
+2014-02-16 19:06:59,786 [main] INFO  (DfSchemaXmlSerializer#processTable():423) - $ [Table List]
+2014-02-16 19:06:59,787 [main] INFO  (DfSchemaXmlSerializer#doProcessTable():506) - $ attacklistdb.MEMBER(TABLE) // ���
+2014-02-16 19:06:59,825 [main] INFO  (DfSchemaXmlSerializer#processTable():435) - $ 
+2014-02-16 19:06:59,826 [main] INFO  (DfSchemaXmlSerializer#processTable():436) - $ [Table Count]
+2014-02-16 19:06:59,826 [main] INFO  (DfSchemaXmlSerializer#processTable():437) - $ 1
+2014-02-16 19:06:59,827 [main] INFO  (DfSchemaXmlSerializer#processTable():438) - $ = = = = = = = = = =/
+2014-02-16 19:06:59,827 [main] INFO  (DfSchemaXmlSerializer#processTable():439) - 
+2014-02-16 19:06:59,828 [main] INFO  (DfSchemaXmlSerializer#processSequence():795) - ...Getting sequences
+2014-02-16 19:06:59,832 [main] INFO  (DfSchemaXmlSerializer#serialize():301) - ...Serializing XML:
+2014-02-16 19:06:59,832 [main] INFO  (DfSchemaXmlSerializer#serialize():302) -   filePath = ./schema/project-schema-attacklist-db.xml
+2014-02-16 19:06:59,833 [main] INFO  (DfSchemaXmlSerializer#serialize():303) -   encoding = UTF-8
+2014-02-16 19:06:59,848 [main] INFO  (DfDataSourceHandler#destroy():121) - ...closeReally()
+2014-02-16 19:06:59,853 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():150) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m00s434ms
+
+  DBFLUTE_CLIENT: {attacklist-db}
+    database  = mysql (MySQL 5.6.14)
+    language  = java
+    container = seasar
+    package   = jp.attacklist.common.entity
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/attacklistdb
+    schema = {attacklistdb.$$NoNameSchema$$ as main}
+    user   = root
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = attacklist-common
+_/_/_/_/_/_/_/_/_/_/ {JDBC}
+2014-02-16 19:07:00,503 [main] INFO  (TorqueDocumentationTask#begin():173) - +------------------------------------------+
+2014-02-16 19:07:00,505 [main] INFO  (TorqueDocumentationTask#begin():174) - |                                          |
+2014-02-16 19:07:00,506 [main] INFO  (TorqueDocumentationTask#begin():175) - |                   Doc                    |
+2014-02-16 19:07:00,506 [main] INFO  (TorqueDocumentationTask#begin():183) - |                                          |
+2014-02-16 19:07:00,507 [main] INFO  (TorqueDocumentationTask#begin():184) - +------------------------------------------+
+2014-02-16 19:07:00,540 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2014-02-16 19:07:00,541 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2014-02-16 19:07:00,542 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/attacklistdb
+2014-02-16 19:07:00,542 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = root
+2014-02-16 19:07:00,544 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():241) - 
+2014-02-16 19:07:00,545 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():242) - * * * * * * * * * * *
+2014-02-16 19:07:00,545 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():243) - *                   *
+2014-02-16 19:07:00,546 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():244) - *    Schema HTML    *
+2014-02-16 19:07:00,546 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():245) - *                   *
+2014-02-16 19:07:00,547 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():246) - * * * * * * * * * * *
+2014-02-16 19:07:00,649 [main] INFO  (DTDResolver#resolveEntity():197) - ...Resolving XML by database.dtd in same package
+2014-02-16 19:07:00,689 [main] INFO  (DfAbstractTexenTask#fireVelocityProcess():256) - generator.parse("doc/ControlDocument.vm", c);
+2014-02-16 19:07:00,721 [main] INFO  (Database#doEnableDocumentOutputDirectory():1174) - ...Setting up documentOutputDirectory: ./output/doc
+2014-02-16 19:07:00,726 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():62) - /=======================================
+2014-02-16 19:07:00,727 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():63) - ...Initializing additional primary keys.
+2014-02-16 19:07:00,729 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():88) - ==========/
+2014-02-16 19:07:00,730 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():62) - /=======================================
+2014-02-16 19:07:00,731 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():63) - ...Initializing additional unique keys.
+2014-02-16 19:07:00,733 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():83) - ==========/
+2014-02-16 19:07:00,737 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():67) - /=======================================
+2014-02-16 19:07:00,738 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():68) - ...Initializing additional foreign keys.
+2014-02-16 19:07:00,740 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():86) - ==========/
+2014-02-16 19:07:00,818 [main] INFO  (DfDocumentSelector#doLoadSchemaHistory():150) - ...Loading schema history
+2014-02-16 19:07:00,819 [main] INFO  (DfDocumentSelector#doLoadSchemaHistory():156) -  -> no history
+2014-02-16 19:07:00,823 [main] INFO  (DfRefreshResourceProcess#refreshResources():63) - ...Refreshing: [attacklist-common]
+2014-02-16 19:07:00,915 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():150) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m00s409ms
+
+  DBFLUTE_CLIENT: {attacklist-db}
+    database  = mysql
+    language  = java
+    container = seasar
+    package   = jp.attacklist.common.entity
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/attacklistdb
+    schema = {attacklistdb.$$NoNameSchema$$ as main}
+    user   = root
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = attacklist-common
+_/_/_/_/_/_/_/_/_/_/ {Doc}
+2014-02-16 19:07:02,632 [main] INFO  (TorqueDataModelTask#begin():104) - +------------------------------------------+
+2014-02-16 19:07:02,634 [main] INFO  (TorqueDataModelTask#begin():105) - |                                          |
+2014-02-16 19:07:02,635 [main] INFO  (TorqueDataModelTask#begin():106) - |                 Generate                 |
+2014-02-16 19:07:02,635 [main] INFO  (TorqueDataModelTask#begin():107) - |                                          |
+2014-02-16 19:07:02,637 [main] INFO  (TorqueDataModelTask#begin():108) - +------------------------------------------+
+2014-02-16 19:07:02,678 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2014-02-16 19:07:02,679 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2014-02-16 19:07:02,679 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/attacklistdb
+2014-02-16 19:07:02,680 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = root
+2014-02-16 19:07:02,685 [main] INFO  (TorqueDataModelTask#setupControlTemplate():153) - 
+2014-02-16 19:07:02,686 [main] INFO  (TorqueDataModelTask#setupControlTemplate():154) - * * * * * * * * *
+2014-02-16 19:07:02,686 [main] INFO  (TorqueDataModelTask#setupControlTemplate():155) - * Process Java  *
+2014-02-16 19:07:02,687 [main] INFO  (TorqueDataModelTask#setupControlTemplate():156) - * * * * * * * * *
+2014-02-16 19:07:02,687 [main] INFO  (TorqueDataModelTask#setupControlTemplate():158) - ...Using Java control: om/ControlGenerateJava.vm
+2014-02-16 19:07:02,755 [main] INFO  (DTDResolver#resolveEntity():197) - ...Resolving XML by database.dtd in same package
+2014-02-16 19:07:02,782 [main] INFO  (DfAbstractTexenTask#fireVelocityProcess():256) - generator.parse("om/ControlGenerateJava.vm", c);
+2014-02-16 19:07:02,947 [main] INFO  (Database#doEnableGenerateOutputDirectory():1142) - ...Setting up generateOutputDirectory: ../src/main/java
+2014-02-16 19:07:02,950 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():62) - /=======================================
+2014-02-16 19:07:02,950 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():63) - ...Initializing additional primary keys.
+2014-02-16 19:07:02,952 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():88) - ==========/
+2014-02-16 19:07:02,954 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():62) - /=======================================
+2014-02-16 19:07:02,954 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():63) - ...Initializing additional unique keys.
+2014-02-16 19:07:02,956 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():83) - ==========/
+2014-02-16 19:07:02,961 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():67) - /=======================================
+2014-02-16 19:07:02,961 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():68) - ...Initializing additional foreign keys.
+2014-02-16 19:07:02,963 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():86) - ==========/
+2014-02-16 19:07:02,973 [main] INFO  (DfIncludeQueryInitializer#initializeIncludeQuery():57) - /=============================
+2014-02-16 19:07:02,974 [main] INFO  (DfIncludeQueryInitializer#initializeIncludeQuery():58) - ...Initializing include query.
+2014-02-16 19:07:02,974 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():79) - String
+2014-02-16 19:07:02,975 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():79) - Number
+2014-02-16 19:07:02,975 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():79) - Date
+2014-02-16 19:07:02,976 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():84) -   NotEqual -> []
+2014-02-16 19:07:02,976 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():84) -   InScope -> []
+2014-02-16 19:07:02,977 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():84) -   NotInScope -> []
+2014-02-16 19:07:02,977 [main] INFO  (DfIncludeQueryInitializer#initializeIncludeQuery():60) - ========/
+2014-02-16 19:07:02,993 [main] INFO  (Database#info():2614) - public void parseAllCommon() {
+2014-02-16 19:07:02,997 [main] INFO  (Database#info():2614) -     parse('DBCurrent');
+2014-02-16 19:07:03,003 [main] INFO  (Database#info():2614) -     parse('DBFluteConfig');
+2014-02-16 19:07:03,038 [main] INFO  (Database#info():2614) -     parse('DBFluteInitializer');
+2014-02-16 19:07:03,048 [main] INFO  (Database#info():2614) -     parse('DBMetaInstanceHandler');
+2014-02-16 19:07:03,070 [main] INFO  (Database#info():2614) -     parse('EntityDefinedCommonColumn');
+2014-02-16 19:07:03,076 [main] INFO  (Database#info():2614) -     parse('ImplementedBehaviorSelector');
+2014-02-16 19:07:03,082 [main] INFO  (Database#info():2614) -     parse('ImplementedCommonColumnAutoSetupper');
+2014-02-16 19:07:03,089 [main] INFO  (Database#info():2614) -     parse('ImplementedInvokerAssistant');
+2014-02-16 19:07:03,109 [main] INFO  (Database#info():2614) -     parse('ImplementedSqlClauseCreator');
+2014-02-16 19:07:03,111 [main] INFO  (Database#info():2614) - }
+2014-02-16 19:07:03,112 [main] INFO  (Database#info():2614) - public void parseContainerConfig() {
+2014-02-16 19:07:03,113 [main] INFO  (Database#info():2614) -     parse('../resources/dbflute.dicon')
+2014-02-16 19:07:03,119 [main] INFO  (Database#info():2614) - }
+2014-02-16 19:07:03,128 [main] INFO  (DfOldClassHandler#info():880) - public void deleteOldTableClass() {
+2014-02-16 19:07:03,149 [main] INFO  (DfOldClassHandler#info():880) - }
+2014-02-16 19:07:03,152 [main] INFO  (Database#info():2614) - public void parseTableClass() {
+2014-02-16 19:07:03,153 [main] INFO  (Database#info():2614) -     parse('MEMBER');
+2014-02-16 19:07:03,468 [main] INFO  (Database#info():2614) - }
+2014-02-16 19:07:03,469 [main] INFO  (Database#info():2614) -  
+2014-02-16 19:07:03,488 [main] INFO  (DfRefreshResourceProcess#refreshResources():63) - ...Refreshing: [attacklist-common]
+2014-02-16 19:07:03,511 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():150) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m00s868ms
+
+  DBFLUTE_CLIENT: {attacklist-db}
+    database  = mysql
+    language  = java
+    container = seasar
+    package   = jp.attacklist.common.entity
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/attacklistdb
+    schema = {attacklistdb.$$NoNameSchema$$ as main}
+    user   = root
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = attacklist-common
+_/_/_/_/_/_/_/_/_/_/ {Generate}
+2014-02-16 19:07:05,255 [main] INFO  (DfOutsideSqlTestTask#begin():72) - +------------------------------------------+
+2014-02-16 19:07:05,258 [main] INFO  (DfOutsideSqlTestTask#begin():73) - |                                          |
+2014-02-16 19:07:05,258 [main] INFO  (DfOutsideSqlTestTask#begin():74) - |              OutsideSqlTest              |
+2014-02-16 19:07:05,258 [main] INFO  (DfOutsideSqlTestTask#begin():75) - |                                          |
+2014-02-16 19:07:05,259 [main] INFO  (DfOutsideSqlTestTask#begin():76) - +------------------------------------------+
+2014-02-16 19:07:05,304 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2014-02-16 19:07:05,304 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2014-02-16 19:07:05,305 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/attacklistdb
+2014-02-16 19:07:05,305 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = root
+2014-02-16 19:07:05,323 [main] INFO  (DfSqlFileFireMan#fire():90) - {Fired SQL}: success=0 failure=0 (in 0 files)
+2014-02-16 19:07:05,330 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():150) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m00s069ms
+
+  DBFLUTE_CLIENT: {attacklist-db}
+    database  = mysql
+    language  = java
+    container = seasar
+    package   = jp.attacklist.common.entity
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/attacklistdb
+    schema = {attacklistdb.$$NoNameSchema$$ as main}
+    user   = root
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = attacklist-common
+
+ {Checked SQL}
+_/_/_/_/_/_/_/_/_/_/ {OutsideSqlTest}
+2014-02-16 19:07:06,137 [main] INFO  (DfSql2EntityTask#begin():100) - +------------------------------------------+
+2014-02-16 19:07:06,139 [main] INFO  (DfSql2EntityTask#begin():101) - |                                          |
+2014-02-16 19:07:06,139 [main] INFO  (DfSql2EntityTask#begin():102) - |                Sql2Entity                |
+2014-02-16 19:07:06,140 [main] INFO  (DfSql2EntityTask#begin():103) - |                                          |
+2014-02-16 19:07:06,140 [main] INFO  (DfSql2EntityTask#begin():104) - +------------------------------------------+
+2014-02-16 19:07:06,180 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2014-02-16 19:07:06,180 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2014-02-16 19:07:06,180 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/attacklistdb
+2014-02-16 19:07:06,181 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = root
+2014-02-16 19:07:06,188 [main] INFO  (DfSql2EntityTask#setupControlTemplate():172) - 
+2014-02-16 19:07:06,189 [main] INFO  (DfSql2EntityTask#setupControlTemplate():173) - * * * * * * * * *
+2014-02-16 19:07:06,189 [main] INFO  (DfSql2EntityTask#setupControlTemplate():174) - * Process Java  *
+2014-02-16 19:07:06,189 [main] INFO  (DfSql2EntityTask#setupControlTemplate():175) - * * * * * * * * *
+2014-02-16 19:07:06,190 [main] INFO  (DfSql2EntityTask#setupControlTemplate():177) - ...Using Java control: om/ControlSql2EntityJava.vm
+2014-02-16 19:07:06,198 [main] INFO  (DTDResolver#resolveEntity():197) - ...Resolving XML by database.dtd in same package
+2014-02-16 19:07:06,254 [main] INFO  (DfSqlFileFireMan#fire():90) - {Fired SQL}: success=0 failure=0 (in 0 files)
+2014-02-16 19:07:06,345 [main] INFO  (DfSql2EntityTask#initControlContext():329) - 
+2014-02-16 19:07:06,345 [main] INFO  (DfSql2EntityTask#initControlContext():330) - ...Preparing generation of customize-entities and parameter-beans
+2014-02-16 19:07:06,346 [main] INFO  (DfSql2EntityTask#initControlContext():331) - * * * * * * * * * *
+2014-02-16 19:07:06,346 [main] INFO  (DfSql2EntityTask#initControlContext():332) - * CustomizeEntity *
+2014-02-16 19:07:06,346 [main] INFO  (DfSql2EntityTask#initControlContext():333) - * * * * * * * * * *
+2014-02-16 19:07:06,347 [main] INFO  (DfSql2EntityTask#showParameterBean():899) - * * * * * * * * *
+2014-02-16 19:07:06,347 [main] INFO  (DfSql2EntityTask#showParameterBean():900) - * ParameterBean *
+2014-02-16 19:07:06,347 [main] INFO  (DfSql2EntityTask#showParameterBean():901) - * * * * * * * * *
+2014-02-16 19:07:06,350 [main] INFO  (DfAbstractTexenTask#fireVelocityProcess():256) - generator.parse("om/ControlSql2EntityJava.vm", c);
+2014-02-16 19:07:06,494 [main] INFO  (Database#doEnableSql2EntityOutputDirectory():1158) - ...Setting up sql2EntityOutputDirectory: ../src/main/java
+2014-02-16 19:07:06,500 [main] INFO  (DfOldClassHandler#info():880) - public void deleteOldCustomizeClass() {
+2014-02-16 19:07:06,510 [main] INFO  (DfOldClassHandler#info():880) - }
+2014-02-16 19:07:06,511 [main] INFO  (Database#info():2614) - public void parseCustomizeEntity() {
+2014-02-16 19:07:06,511 [main] INFO  (Database#info():2614) - }
+2014-02-16 19:07:06,520 [main] INFO  (DfSql2EntityTask#showTargetSqlFileInformation():321) - 
+/- - - - - - - - - - - - - - - - - - - - - - - -
+Target SQL files: 0
+
+- - - - - - - - - -/
+2014-02-16 19:07:06,522 [main] INFO  (DfRefreshResourceProcess#refreshResources():63) - ...Refreshing: [attacklist-common]
+2014-02-16 19:07:06,529 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():150) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m00s388ms
+
+  DBFLUTE_CLIENT: {attacklist-db}
+    database  = mysql
+    language  = java
+    container = seasar
+    package   = jp.attacklist.common.entity
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/attacklistdb
+    schema = {attacklistdb.$$NoNameSchema$$ as main}
+    user   = root
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = attacklist-common
+_/_/_/_/_/_/_/_/_/_/ {Sql2Entity}
+2014-02-16 19:18:32,278 [main] INFO  (DfReplaceSchemaTask#begin():87) - +------------------------------------------+
+2014-02-16 19:18:32,285 [main] INFO  (DfReplaceSchemaTask#begin():88) - |                                          |
+2014-02-16 19:18:32,286 [main] INFO  (DfReplaceSchemaTask#begin():89) - |              ReplaceSchema               |
+2014-02-16 19:18:32,302 [main] INFO  (DfReplaceSchemaTask#begin():97) - |                                          |
+2014-02-16 19:18:32,302 [main] INFO  (DfReplaceSchemaTask#begin():98) - +------------------------------------------+
+2014-02-16 19:18:32,304 [main] INFO  (DfReplaceSchemaTask#waitBeforeReps():329) - ...Waiting for your GO SIGN from stdin before ReplaceSchema:
+2014-02-16 19:18:34,642 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2014-02-16 19:18:34,642 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2014-02-16 19:18:34,643 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/attacklistdb
+2014-02-16 19:18:34,644 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = root
+2014-02-16 19:18:34,657 [main] INFO  (DfDataSourceHandler#createConnection():168) - ...Connecting to database by data source:
+2014-02-16 19:18:34,929 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():235) -   product = MySQL 5.6.14
+2014-02-16 19:18:34,930 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():236) -   driver  = MySQL Connector Java mysql-connector-java-5.1.26 ( Revision: ${bzr.revision-id} ) for JDBC 4.0
+2014-02-16 19:18:34,947 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():207) - 
+2014-02-16 19:18:34,948 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():208) - * * * * * * * * * * *
+2014-02-16 19:18:34,948 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():209) - *                   *
+2014-02-16 19:18:34,949 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():210) - * Initialize Schema *
+2014-02-16 19:18:34,950 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():211) - *                   *
+2014-02-16 19:18:34,951 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():212) - * * * * * * * * * * *
+2014-02-16 19:18:34,963 [main] INFO  (DfTableExtractor#doGetTableList():67) - ...Getting tables:
+2014-02-16 19:18:34,964 [main] INFO  (DfTableExtractor#doGetTableList():68) -   schema = {attacklistdb.$$NoNameSchema$$ as main}
+2014-02-16 19:18:34,966 [main] INFO  (DfTableExtractor#doGetTableList():69) -   types  = [TABLE, VIEW]
+2014-02-16 19:18:35,026 [main] INFO  (DfSchemaInitializerJdbc#logReplaceSql():576) - truncate table MEMBER
+2014-02-16 19:18:35,033 [main] INFO  (DfSchemaInitializerJdbc#logReplaceSql():576) - drop table MEMBER
+2014-02-16 19:18:35,058 [main] INFO  (DfCreateSchemaProcess#createSchema():244) - 
+2014-02-16 19:18:35,059 [main] INFO  (DfCreateSchemaProcess#createSchema():245) - * * * * * * * * *
+2014-02-16 19:18:35,059 [main] INFO  (DfCreateSchemaProcess#createSchema():246) - *               *
+2014-02-16 19:18:35,060 [main] INFO  (DfCreateSchemaProcess#createSchema():247) - * Create Schema *
+2014-02-16 19:18:35,061 [main] INFO  (DfCreateSchemaProcess#createSchema():248) - *               *
+2014-02-16 19:18:35,061 [main] INFO  (DfCreateSchemaProcess#createSchema():249) - * * * * * * * * *
+2014-02-16 19:18:35,068 [main] INFO  (DfSqlFileFireMan#fire():65) - ...Firing: replace-schema.sql
+2014-02-16 19:18:35,070 [main] INFO  (DfSqlFileRunnerBase#traceSql():168) - 
+CREATE TABLE MEMBER
+(
+	MEMBER_ID BIGINT NOT NULL AUTO_INCREMENT COMMENT '���ID',
+	MAIN_MAIL_ADDRESS VARCHAR(250) NOT NULL UNIQUE COMMENT '���[���A�h���X',
+	SUB_MAIL_ADDRESS VARCHAR(250) NOT NULL UNIQUE COMMENT '���[���A�h���X',
+	PRIMARY KEY (MEMBER_ID)
+) COMMENT = '���'
+2014-02-16 19:18:35,097 [main] INFO  (DfSqlFileRunnerBase#traceResult():172) -  -> success=1 failure=0
+2014-02-16 19:18:35,098 [main] INFO  (DfSqlFileFireMan#fire():90) - {Create Schema}: success=1 failure=0 (in 1 files)
+2014-02-16 19:18:35,132 [main] INFO  (DfLoadDataProcess#execute():129) - 
+2014-02-16 19:18:35,133 [main] INFO  (DfLoadDataProcess#execute():130) - * * * * * * * * * * *
+2014-02-16 19:18:35,134 [main] INFO  (DfLoadDataProcess#execute():131) - *                   *
+2014-02-16 19:18:35,134 [main] INFO  (DfLoadDataProcess#execute():132) - * Load Data         *
+2014-02-16 19:18:35,135 [main] INFO  (DfLoadDataProcess#execute():133) - *                   *
+2014-02-16 19:18:35,135 [main] INFO  (DfLoadDataProcess#execute():134) - * * * * * * * * * * *
+2014-02-16 19:18:35,159 [main] INFO  (DfTakeFinallyProcess#takeFinally():219) - 
+2014-02-16 19:18:35,160 [main] INFO  (DfTakeFinallyProcess#takeFinally():220) - * * * * * * * **
+2014-02-16 19:18:35,160 [main] INFO  (DfTakeFinallyProcess#takeFinally():221) - *              *
+2014-02-16 19:18:35,161 [main] INFO  (DfTakeFinallyProcess#takeFinally():222) - * Take Finally *
+2014-02-16 19:18:35,161 [main] INFO  (DfTakeFinallyProcess#takeFinally():223) - *              *
+2014-02-16 19:18:35,162 [main] INFO  (DfTakeFinallyProcess#takeFinally():224) - * * * * * * * **
+2014-02-16 19:18:35,169 [main] INFO  (DfSqlFileFireMan#fire():65) - ...Firing: take-finally.sql
+2014-02-16 19:18:35,171 [main] INFO  (DfSqlFileRunnerBase#traceResult():172) -  -> success=0 failure=0
+2014-02-16 19:18:35,172 [main] INFO  (DfSqlFileFireMan#fire():90) - {Take Finally}: success=0 failure=0 (in 1 files)
+2014-02-16 19:18:35,174 [main] INFO  (DfDataSourceHandler#destroy():121) - ...closeReally()
+2014-02-16 19:18:35,180 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():150) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m02s899ms
+
+  DBFLUTE_CLIENT: {attacklist-db}
+    database  = mysql (MySQL 5.6.14)
+    language  = java
+    container = seasar
+    package   = jp.attacklist.common.entity
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/attacklistdb
+    schema = {attacklistdb.$$NoNameSchema$$ as main}
+    user   = root
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = attacklist-common
+
+ {Create Schema}: success=1 failure=0 (in 1 files)
+  o replace-schema.sql
+
+ {Load Data}: loaded-files=0
+  - (no data file)
+
+ {Take Finally}: success=0 failure=0 (in 1 files)
+  o take-finally.sql
+_/_/_/_/_/_/_/_/_/_/ {ReplaceSchema}
+2014-02-16 19:18:35,877 [main] INFO  (TorqueJDBCTransformTask#begin():100) - +------------------------------------------+
+2014-02-16 19:18:35,878 [main] INFO  (TorqueJDBCTransformTask#begin():101) - |                                          |
+2014-02-16 19:18:35,879 [main] INFO  (TorqueJDBCTransformTask#begin():102) - |                   JDBC                   |
+2014-02-16 19:18:35,879 [main] INFO  (TorqueJDBCTransformTask#begin():103) - |                                          |
+2014-02-16 19:18:35,880 [main] INFO  (TorqueJDBCTransformTask#begin():104) - +------------------------------------------+
+2014-02-16 19:18:35,910 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2014-02-16 19:18:35,911 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2014-02-16 19:18:35,911 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/attacklistdb
+2014-02-16 19:18:35,912 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = root
+2014-02-16 19:18:35,947 [main] INFO  (DfSchemaXmlSerializer#serialize():286) - 
+2014-02-16 19:18:35,948 [main] INFO  (DfSchemaXmlSerializer#serialize():287) - ...Starting to process JDBC to SchemaXML
+2014-02-16 19:18:35,953 [main] INFO  (DfSchemaXmlSerializer#doLoadPreviousSchema():1463) - ...Loading previous schema (schema diff process)
+2014-02-16 19:18:35,964 [main] INFO  (DTDResolver#resolveEntity():197) - ...Resolving XML by database.dtd in same package
+2014-02-16 19:18:36,010 [main] INFO  (DfSchemaXmlSerializer#generateXML():361) - ...Getting DB connection
+2014-02-16 19:18:36,014 [main] INFO  (DfDataSourceHandler#createConnection():168) - ...Connecting to database by data source:
+2014-02-16 19:18:36,209 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():235) -   product = MySQL 5.6.14
+2014-02-16 19:18:36,210 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():236) -   driver  = MySQL Connector Java mysql-connector-java-5.1.26 ( Revision: ${bzr.revision-id} ) for JDBC 4.0
+2014-02-16 19:18:36,211 [main] INFO  (DfSchemaXmlSerializer#generateXML():364) - ...Getting DB meta data
+2014-02-16 19:18:36,212 [main] INFO  (DfTableExtractor#doGetTableList():67) - ...Getting tables:
+2014-02-16 19:18:36,212 [main] INFO  (DfTableExtractor#doGetTableList():68) -   schema = {attacklistdb.$$NoNameSchema$$ as main}
+2014-02-16 19:18:36,213 [main] INFO  (DfTableExtractor#doGetTableList():69) -   types  = [TABLE, VIEW]
+2014-02-16 19:18:36,220 [main] INFO  (DfDbCommentExtractorBase#doSelectUserTabComments():121) - select table_type as OBJECT_TYPE, table_name as TABLE_NAME, table_comment as COMMENTS from information_schema.tables where table_schema = 'attacklistdb' order by table_name asc
+2014-02-16 19:18:36,224 [main] INFO  (DfDbCommentExtractorBase#doSelectUserColComments():168) - select table_name as TABLE_NAME, column_name as COLUMN_NAME, column_comment as COMMENTS from information_schema.columns where table_schema = 'attacklistdb' order by table_name asc, column_name asc
+2014-02-16 19:18:36,235 [main] INFO  (DfSchemaXmlSerializer#processTable():421) - 
+2014-02-16 19:18:36,236 [main] INFO  (DfSchemaXmlSerializer#processTable():422) - $ /= = = = = = = = = = = = = = = = = = = = = = = = = =
+2014-02-16 19:18:36,237 [main] INFO  (DfSchemaXmlSerializer#processTable():423) - $ [Table List]
+2014-02-16 19:18:36,237 [main] INFO  (DfSchemaXmlSerializer#doProcessTable():506) - $ attacklistdb.MEMBER(TABLE) // ���
+2014-02-16 19:18:36,274 [main] INFO  (DfSchemaXmlSerializer#processTable():435) - $ 
+2014-02-16 19:18:36,274 [main] INFO  (DfSchemaXmlSerializer#processTable():436) - $ [Table Count]
+2014-02-16 19:18:36,275 [main] INFO  (DfSchemaXmlSerializer#processTable():437) - $ 1
+2014-02-16 19:18:36,275 [main] INFO  (DfSchemaXmlSerializer#processTable():438) - $ = = = = = = = = = =/
+2014-02-16 19:18:36,276 [main] INFO  (DfSchemaXmlSerializer#processTable():439) - 
+2014-02-16 19:18:36,277 [main] INFO  (DfSchemaXmlSerializer#processSequence():795) - ...Getting sequences
+2014-02-16 19:18:36,280 [main] INFO  (DfSchemaXmlSerializer#serialize():301) - ...Serializing XML:
+2014-02-16 19:18:36,280 [main] INFO  (DfSchemaXmlSerializer#serialize():302) -   filePath = ./schema/project-schema-attacklist-db.xml
+2014-02-16 19:18:36,281 [main] INFO  (DfSchemaXmlSerializer#serialize():303) -   encoding = UTF-8
+2014-02-16 19:18:36,296 [main] INFO  (DfSchemaXmlSerializer#doLoadNextSchema():1481) - ...Loading next schema (schema diff process)
+2014-02-16 19:18:36,298 [main] INFO  (DTDResolver#resolveEntity():197) - ...Resolving XML by database.dtd in same package
+2014-02-16 19:18:36,324 [main] INFO  (DfSchemaXmlSerializer#doLoadNextSchema():1486) -  -> different from previous (schema diff)
+2014-02-16 19:18:36,325 [main] INFO  (DfSchemaXmlSerializer#doLoadNextSchema():1488) - ...Serializing schema-diff:
+2014-02-16 19:18:36,325 [main] INFO  (DfSchemaXmlSerializer#doLoadNextSchema():1489) -   filePath = ./schema/project-history-attacklist-db.diffmap
+2014-02-16 19:18:36,335 [main] INFO  (DfDataSourceHandler#destroy():121) - ...closeReally()
+2014-02-16 19:18:36,346 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():150) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m00s460ms
+
+  DBFLUTE_CLIENT: {attacklist-db}
+    database  = mysql (MySQL 5.6.14)
+    language  = java
+    container = seasar
+    package   = jp.attacklist.common.entity
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/attacklistdb
+    schema = {attacklistdb.$$NoNameSchema$$ as main}
+    user   = root
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = attacklist-common
+_/_/_/_/_/_/_/_/_/_/ {JDBC}
+2014-02-16 19:18:37,049 [main] INFO  (TorqueDocumentationTask#begin():173) - +------------------------------------------+
+2014-02-16 19:18:37,051 [main] INFO  (TorqueDocumentationTask#begin():174) - |                                          |
+2014-02-16 19:18:37,052 [main] INFO  (TorqueDocumentationTask#begin():175) - |                   Doc                    |
+2014-02-16 19:18:37,053 [main] INFO  (TorqueDocumentationTask#begin():183) - |                                          |
+2014-02-16 19:18:37,053 [main] INFO  (TorqueDocumentationTask#begin():184) - +------------------------------------------+
+2014-02-16 19:18:37,101 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2014-02-16 19:18:37,101 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2014-02-16 19:18:37,102 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/attacklistdb
+2014-02-16 19:18:37,103 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = root
+2014-02-16 19:18:37,105 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():241) - 
+2014-02-16 19:18:37,106 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():242) - * * * * * * * * * * *
+2014-02-16 19:18:37,113 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():243) - *                   *
+2014-02-16 19:18:37,113 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():244) - *    Schema HTML    *
+2014-02-16 19:18:37,115 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():245) - *                   *
+2014-02-16 19:18:37,116 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():246) - * * * * * * * * * * *
+2014-02-16 19:18:37,210 [main] INFO  (DTDResolver#resolveEntity():197) - ...Resolving XML by database.dtd in same package
+2014-02-16 19:18:37,245 [main] INFO  (DfAbstractTexenTask#fireVelocityProcess():256) - generator.parse("doc/ControlDocument.vm", c);
+2014-02-16 19:18:37,284 [main] INFO  (Database#doEnableDocumentOutputDirectory():1174) - ...Setting up documentOutputDirectory: ./output/doc
+2014-02-16 19:18:37,290 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():62) - /=======================================
+2014-02-16 19:18:37,291 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():63) - ...Initializing additional primary keys.
+2014-02-16 19:18:37,292 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():88) - ==========/
+2014-02-16 19:18:37,293 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():62) - /=======================================
+2014-02-16 19:18:37,294 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():63) - ...Initializing additional unique keys.
+2014-02-16 19:18:37,296 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():83) - ==========/
+2014-02-16 19:18:37,301 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():67) - /=======================================
+2014-02-16 19:18:37,302 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():68) - ...Initializing additional foreign keys.
+2014-02-16 19:18:37,304 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():86) - ==========/
+2014-02-16 19:18:37,402 [main] INFO  (DfDocumentSelector#doLoadSchemaHistory():150) - ...Loading schema history
+2014-02-16 19:18:37,421 [main] INFO  (DfDocumentSelector#doLoadSchemaHistory():154) -  -> found history: count=1
+2014-02-16 19:18:37,449 [main] INFO  (DfRefreshResourceProcess#refreshResources():63) - ...Refreshing: [attacklist-common]
+2014-02-16 19:18:37,467 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():150) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m00s415ms
+
+  DBFLUTE_CLIENT: {attacklist-db}
+    database  = mysql
+    language  = java
+    container = seasar
+    package   = jp.attacklist.common.entity
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/attacklistdb
+    schema = {attacklistdb.$$NoNameSchema$$ as main}
+    user   = root
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = attacklist-common
+_/_/_/_/_/_/_/_/_/_/ {Doc}
+2014-02-16 19:18:39,153 [main] INFO  (TorqueDataModelTask#begin():104) - +------------------------------------------+
+2014-02-16 19:18:39,154 [main] INFO  (TorqueDataModelTask#begin():105) - |                                          |
+2014-02-16 19:18:39,155 [main] INFO  (TorqueDataModelTask#begin():106) - |                 Generate                 |
+2014-02-16 19:18:39,155 [main] INFO  (TorqueDataModelTask#begin():107) - |                                          |
+2014-02-16 19:18:39,156 [main] INFO  (TorqueDataModelTask#begin():108) - +------------------------------------------+
+2014-02-16 19:18:39,185 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2014-02-16 19:18:39,185 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2014-02-16 19:18:39,186 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/attacklistdb
+2014-02-16 19:18:39,186 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = root
+2014-02-16 19:18:39,192 [main] INFO  (TorqueDataModelTask#setupControlTemplate():153) - 
+2014-02-16 19:18:39,193 [main] INFO  (TorqueDataModelTask#setupControlTemplate():154) - * * * * * * * * *
+2014-02-16 19:18:39,193 [main] INFO  (TorqueDataModelTask#setupControlTemplate():155) - * Process Java  *
+2014-02-16 19:18:39,194 [main] INFO  (TorqueDataModelTask#setupControlTemplate():156) - * * * * * * * * *
+2014-02-16 19:18:39,194 [main] INFO  (TorqueDataModelTask#setupControlTemplate():158) - ...Using Java control: om/ControlGenerateJava.vm
+2014-02-16 19:18:39,267 [main] INFO  (DTDResolver#resolveEntity():197) - ...Resolving XML by database.dtd in same package
+2014-02-16 19:18:39,331 [main] INFO  (DfAbstractTexenTask#fireVelocityProcess():256) - generator.parse("om/ControlGenerateJava.vm", c);
+2014-02-16 19:18:39,483 [main] INFO  (Database#doEnableGenerateOutputDirectory():1142) - ...Setting up generateOutputDirectory: ../src/main/java
+2014-02-16 19:18:39,486 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():62) - /=======================================
+2014-02-16 19:18:39,487 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():63) - ...Initializing additional primary keys.
+2014-02-16 19:18:39,489 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():88) - ==========/
+2014-02-16 19:18:39,491 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():62) - /=======================================
+2014-02-16 19:18:39,492 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():63) - ...Initializing additional unique keys.
+2014-02-16 19:18:39,493 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():83) - ==========/
+2014-02-16 19:18:39,509 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():67) - /=======================================
+2014-02-16 19:18:39,510 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():68) - ...Initializing additional foreign keys.
+2014-02-16 19:18:39,512 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():86) - ==========/
+2014-02-16 19:18:39,522 [main] INFO  (DfIncludeQueryInitializer#initializeIncludeQuery():57) - /=============================
+2014-02-16 19:18:39,523 [main] INFO  (DfIncludeQueryInitializer#initializeIncludeQuery():58) - ...Initializing include query.
+2014-02-16 19:18:39,523 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():79) - String
+2014-02-16 19:18:39,524 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():79) - Number
+2014-02-16 19:18:39,524 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():79) - Date
+2014-02-16 19:18:39,525 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():84) -   NotEqual -> []
+2014-02-16 19:18:39,525 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():84) -   InScope -> []
+2014-02-16 19:18:39,526 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():84) -   NotInScope -> []
+2014-02-16 19:18:39,526 [main] INFO  (DfIncludeQueryInitializer#initializeIncludeQuery():60) - ========/
+2014-02-16 19:18:39,538 [main] INFO  (Database#info():2614) - public void parseAllCommon() {
+2014-02-16 19:18:39,539 [main] INFO  (Database#info():2614) -     parse('DBCurrent');
+2014-02-16 19:18:39,543 [main] INFO  (Database#info():2614) -     parse('DBFluteConfig');
+2014-02-16 19:18:39,564 [main] INFO  (Database#info():2614) -     parse('DBFluteInitializer');
+2014-02-16 19:18:39,571 [main] INFO  (Database#info():2614) -     parse('DBMetaInstanceHandler');
+2014-02-16 19:18:39,588 [main] INFO  (Database#info():2614) -     parse('EntityDefinedCommonColumn');
+2014-02-16 19:18:39,595 [main] INFO  (Database#info():2614) -     parse('ImplementedBehaviorSelector');
+2014-02-16 19:18:39,603 [main] INFO  (Database#info():2614) -     parse('ImplementedCommonColumnAutoSetupper');
+2014-02-16 19:18:39,613 [main] INFO  (Database#info():2614) -     parse('ImplementedInvokerAssistant');
+2014-02-16 19:18:39,618 [main] INFO  (Database#info():2614) -     parse('ImplementedSqlClauseCreator');
+2014-02-16 19:18:39,622 [main] INFO  (Database#info():2614) - }
+2014-02-16 19:18:39,623 [main] INFO  (Database#info():2614) - public void parseContainerConfig() {
+2014-02-16 19:18:39,624 [main] INFO  (Database#info():2614) -     parse('../resources/dbflute.dicon')
+2014-02-16 19:18:39,630 [main] INFO  (Database#info():2614) - }
+2014-02-16 19:18:39,638 [main] INFO  (DfOldClassHandler#info():880) - public void deleteOldTableClass() {
+2014-02-16 19:18:39,654 [main] INFO  (DfOldClassHandler#info():880) - }
+2014-02-16 19:18:39,655 [main] INFO  (Database#info():2614) - public void parseTableClass() {
+2014-02-16 19:18:39,656 [main] INFO  (Database#info():2614) -     parse('MEMBER');
+2014-02-16 19:18:39,994 [main] INFO  (Database#info():2614) - }
+2014-02-16 19:18:39,995 [main] INFO  (Database#info():2614) -  
+2014-02-16 19:18:40,008 [main] INFO  (DfRefreshResourceProcess#refreshResources():63) - ...Refreshing: [attacklist-common]
+2014-02-16 19:18:40,016 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():150) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m00s858ms
+
+  DBFLUTE_CLIENT: {attacklist-db}
+    database  = mysql
+    language  = java
+    container = seasar
+    package   = jp.attacklist.common.entity
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/attacklistdb
+    schema = {attacklistdb.$$NoNameSchema$$ as main}
+    user   = root
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = attacklist-common
+_/_/_/_/_/_/_/_/_/_/ {Generate}
+2014-02-16 19:18:41,226 [main] INFO  (DfOutsideSqlTestTask#begin():72) - +------------------------------------------+
+2014-02-16 19:18:41,228 [main] INFO  (DfOutsideSqlTestTask#begin():73) - |                                          |
+2014-02-16 19:18:41,228 [main] INFO  (DfOutsideSqlTestTask#begin():74) - |              OutsideSqlTest              |
+2014-02-16 19:18:41,228 [main] INFO  (DfOutsideSqlTestTask#begin():75) - |                                          |
+2014-02-16 19:18:41,229 [main] INFO  (DfOutsideSqlTestTask#begin():76) - +------------------------------------------+
+2014-02-16 19:18:41,268 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2014-02-16 19:18:41,269 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2014-02-16 19:18:41,269 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/attacklistdb
+2014-02-16 19:18:41,270 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = root
+2014-02-16 19:18:41,288 [main] INFO  (DfSqlFileFireMan#fire():90) - {Fired SQL}: success=0 failure=0 (in 0 files)
+2014-02-16 19:18:41,295 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():150) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m00s063ms
+
+  DBFLUTE_CLIENT: {attacklist-db}
+    database  = mysql
+    language  = java
+    container = seasar
+    package   = jp.attacklist.common.entity
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/attacklistdb
+    schema = {attacklistdb.$$NoNameSchema$$ as main}
+    user   = root
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = attacklist-common
+
+ {Checked SQL}
+_/_/_/_/_/_/_/_/_/_/ {OutsideSqlTest}
+2014-02-16 19:18:41,907 [main] INFO  (DfSql2EntityTask#begin():100) - +------------------------------------------+
+2014-02-16 19:18:41,909 [main] INFO  (DfSql2EntityTask#begin():101) - |                                          |
+2014-02-16 19:18:41,909 [main] INFO  (DfSql2EntityTask#begin():102) - |                Sql2Entity                |
+2014-02-16 19:18:41,909 [main] INFO  (DfSql2EntityTask#begin():103) - |                                          |
+2014-02-16 19:18:41,909 [main] INFO  (DfSql2EntityTask#begin():104) - +------------------------------------------+
+2014-02-16 19:18:41,939 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2014-02-16 19:18:41,939 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2014-02-16 19:18:41,940 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/attacklistdb
+2014-02-16 19:18:41,940 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = root
+2014-02-16 19:18:41,945 [main] INFO  (DfSql2EntityTask#setupControlTemplate():172) - 
+2014-02-16 19:18:41,946 [main] INFO  (DfSql2EntityTask#setupControlTemplate():173) - * * * * * * * * *
+2014-02-16 19:18:41,946 [main] INFO  (DfSql2EntityTask#setupControlTemplate():174) - * Process Java  *
+2014-02-16 19:18:41,946 [main] INFO  (DfSql2EntityTask#setupControlTemplate():175) - * * * * * * * * *
+2014-02-16 19:18:41,947 [main] INFO  (DfSql2EntityTask#setupControlTemplate():177) - ...Using Java control: om/ControlSql2EntityJava.vm
+2014-02-16 19:18:41,953 [main] INFO  (DTDResolver#resolveEntity():197) - ...Resolving XML by database.dtd in same package
+2014-02-16 19:18:41,983 [main] INFO  (DfSqlFileFireMan#fire():90) - {Fired SQL}: success=0 failure=0 (in 0 files)
+2014-02-16 19:18:42,059 [main] INFO  (DfSql2EntityTask#initControlContext():329) - 
+2014-02-16 19:18:42,059 [main] INFO  (DfSql2EntityTask#initControlContext():330) - ...Preparing generation of customize-entities and parameter-beans
+2014-02-16 19:18:42,059 [main] INFO  (DfSql2EntityTask#initControlContext():331) - * * * * * * * * * *
+2014-02-16 19:18:42,060 [main] INFO  (DfSql2EntityTask#initControlContext():332) - * CustomizeEntity *
+2014-02-16 19:18:42,060 [main] INFO  (DfSql2EntityTask#initControlContext():333) - * * * * * * * * * *
+2014-02-16 19:18:42,060 [main] INFO  (DfSql2EntityTask#showParameterBean():899) - * * * * * * * * *
+2014-02-16 19:18:42,060 [main] INFO  (DfSql2EntityTask#showParameterBean():900) - * ParameterBean *
+2014-02-16 19:18:42,061 [main] INFO  (DfSql2EntityTask#showParameterBean():901) - * * * * * * * * *
+2014-02-16 19:18:42,063 [main] INFO  (DfAbstractTexenTask#fireVelocityProcess():256) - generator.parse("om/ControlSql2EntityJava.vm", c);
+2014-02-16 19:18:42,155 [main] INFO  (Database#doEnableSql2EntityOutputDirectory():1158) - ...Setting up sql2EntityOutputDirectory: ../src/main/java
+2014-02-16 19:18:42,158 [main] INFO  (DfOldClassHandler#info():880) - public void deleteOldCustomizeClass() {
+2014-02-16 19:18:42,164 [main] INFO  (DfOldClassHandler#info():880) - }
+2014-02-16 19:18:42,165 [main] INFO  (Database#info():2614) - public void parseCustomizeEntity() {
+2014-02-16 19:18:42,165 [main] INFO  (Database#info():2614) - }
+2014-02-16 19:18:42,171 [main] INFO  (DfSql2EntityTask#showTargetSqlFileInformation():321) - 
+/- - - - - - - - - - - - - - - - - - - - - - - -
+Target SQL files: 0
+
+- - - - - - - - - -/
+2014-02-16 19:18:42,173 [main] INFO  (DfRefreshResourceProcess#refreshResources():63) - ...Refreshing: [attacklist-common]
+2014-02-16 19:18:42,178 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():150) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m00s268ms
+
+  DBFLUTE_CLIENT: {attacklist-db}
+    database  = mysql
+    language  = java
+    container = seasar
+    package   = jp.attacklist.common.entity
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/attacklistdb
+    schema = {attacklistdb.$$NoNameSchema$$ as main}
+    user   = root
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = attacklist-common
+_/_/_/_/_/_/_/_/_/_/ {Sql2Entity}
+2014-02-16 19:25:22,172 [main] INFO  (DfReplaceSchemaTask#begin():87) - +------------------------------------------+
+2014-02-16 19:25:22,181 [main] INFO  (DfReplaceSchemaTask#begin():88) - |                                          |
+2014-02-16 19:25:22,182 [main] INFO  (DfReplaceSchemaTask#begin():89) - |              ReplaceSchema               |
+2014-02-16 19:25:22,198 [main] INFO  (DfReplaceSchemaTask#begin():97) - |                                          |
+2014-02-16 19:25:22,199 [main] INFO  (DfReplaceSchemaTask#begin():98) - +------------------------------------------+
+2014-02-16 19:25:22,200 [main] INFO  (DfReplaceSchemaTask#waitBeforeReps():329) - ...Waiting for your GO SIGN from stdin before ReplaceSchema:
+2014-02-16 19:25:26,617 [main] INFO  (DfReplaceSchemaTask#begin():103) - *The execution of ReplaceSchema was cancelled.
+2014-02-16 19:25:26,628 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():150) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m04s451ms *Abort
+
+  DBFLUTE_CLIENT: {attacklist-db}
+    database  = mysql
+    language  = java
+    container = seasar
+    package   = jp.attacklist.common.entity
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = attacklist-common
+
+    * * * * * * *
+    * Cancelled *
+    * * * * * * *
+_/_/_/_/_/_/_/_/_/_/ {ReplaceSchema}
+2014-02-16 19:25:45,109 [main] INFO  (TorqueJDBCTransformTask#begin():100) - +------------------------------------------+
+2014-02-16 19:25:45,111 [main] INFO  (TorqueJDBCTransformTask#begin():101) - |                                          |
+2014-02-16 19:25:45,112 [main] INFO  (TorqueJDBCTransformTask#begin():102) - |                   JDBC                   |
+2014-02-16 19:25:45,112 [main] INFO  (TorqueJDBCTransformTask#begin():103) - |                                          |
+2014-02-16 19:25:45,113 [main] INFO  (TorqueJDBCTransformTask#begin():104) - +------------------------------------------+
+2014-02-16 19:25:45,153 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2014-02-16 19:25:45,154 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2014-02-16 19:25:45,154 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/attacklistdb
+2014-02-16 19:25:45,155 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = root
+2014-02-16 19:25:45,192 [main] INFO  (DfSchemaXmlSerializer#serialize():286) - 
+2014-02-16 19:25:45,192 [main] INFO  (DfSchemaXmlSerializer#serialize():287) - ...Starting to process JDBC to SchemaXML
+2014-02-16 19:25:45,193 [main] INFO  (DfSchemaXmlSerializer#doLoadPreviousSchema():1463) - ...Loading previous schema (schema diff process)
+2014-02-16 19:25:45,206 [main] INFO  (DTDResolver#resolveEntity():197) - ...Resolving XML by database.dtd in same package
+2014-02-16 19:25:45,265 [main] INFO  (DfSchemaXmlSerializer#generateXML():361) - ...Getting DB connection
+2014-02-16 19:25:45,272 [main] INFO  (DfDataSourceHandler#createConnection():168) - ...Connecting to database by data source:
+2014-02-16 19:25:45,519 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():235) -   product = MySQL 5.6.14
+2014-02-16 19:25:45,520 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():236) -   driver  = MySQL Connector Java mysql-connector-java-5.1.26 ( Revision: ${bzr.revision-id} ) for JDBC 4.0
+2014-02-16 19:25:45,522 [main] INFO  (DfSchemaXmlSerializer#generateXML():364) - ...Getting DB meta data
+2014-02-16 19:25:45,525 [main] INFO  (DfTableExtractor#doGetTableList():67) - ...Getting tables:
+2014-02-16 19:25:45,525 [main] INFO  (DfTableExtractor#doGetTableList():68) -   schema = {attacklistdb.$$NoNameSchema$$ as main}
+2014-02-16 19:25:45,526 [main] INFO  (DfTableExtractor#doGetTableList():69) -   types  = [TABLE, VIEW]
+2014-02-16 19:25:45,536 [main] INFO  (DfDbCommentExtractorBase#doSelectUserTabComments():121) - select table_type as OBJECT_TYPE, table_name as TABLE_NAME, table_comment as COMMENTS from information_schema.tables where table_schema = 'attacklistdb' order by table_name asc
+2014-02-16 19:25:45,540 [main] INFO  (DfDbCommentExtractorBase#doSelectUserColComments():168) - select table_name as TABLE_NAME, column_name as COLUMN_NAME, column_comment as COMMENTS from information_schema.columns where table_schema = 'attacklistdb' order by table_name asc, column_name asc
+2014-02-16 19:25:45,550 [main] INFO  (DfSchemaXmlSerializer#processTable():421) - 
+2014-02-16 19:25:45,551 [main] INFO  (DfSchemaXmlSerializer#processTable():422) - $ /= = = = = = = = = = = = = = = = = = = = = = = = = =
+2014-02-16 19:25:45,552 [main] INFO  (DfSchemaXmlSerializer#processTable():423) - $ [Table List]
+2014-02-16 19:25:45,552 [main] INFO  (DfSchemaXmlSerializer#doProcessTable():506) - $ attacklistdb.MEMBER(TABLE) // ���
+2014-02-16 19:25:45,592 [main] INFO  (DfSchemaXmlSerializer#processTable():435) - $ 
+2014-02-16 19:25:45,592 [main] INFO  (DfSchemaXmlSerializer#processTable():436) - $ [Table Count]
+2014-02-16 19:25:45,593 [main] INFO  (DfSchemaXmlSerializer#processTable():437) - $ 1
+2014-02-16 19:25:45,593 [main] INFO  (DfSchemaXmlSerializer#processTable():438) - $ = = = = = = = = = =/
+2014-02-16 19:25:45,594 [main] INFO  (DfSchemaXmlSerializer#processTable():439) - 
+2014-02-16 19:25:45,595 [main] INFO  (DfSchemaXmlSerializer#processSequence():795) - ...Getting sequences
+2014-02-16 19:25:45,599 [main] INFO  (DfSchemaXmlSerializer#serialize():301) - ...Serializing XML:
+2014-02-16 19:25:45,599 [main] INFO  (DfSchemaXmlSerializer#serialize():302) -   filePath = ./schema/project-schema-attacklist-db.xml
+2014-02-16 19:25:45,599 [main] INFO  (DfSchemaXmlSerializer#serialize():303) -   encoding = UTF-8
+2014-02-16 19:25:45,614 [main] INFO  (DfSchemaXmlSerializer#doLoadNextSchema():1481) - ...Loading next schema (schema diff process)
+2014-02-16 19:25:45,617 [main] INFO  (DTDResolver#resolveEntity():197) - ...Resolving XML by database.dtd in same package
+2014-02-16 19:25:45,650 [main] INFO  (DfSchemaXmlSerializer#doLoadNextSchema():1496) -  -> same as previous (schema diff)
+2014-02-16 19:25:45,651 [main] INFO  (DfDataSourceHandler#destroy():121) - ...closeReally()
+2014-02-16 19:25:45,656 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():150) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m00s544ms
+
+  DBFLUTE_CLIENT: {attacklist-db}
+    database  = mysql (MySQL 5.6.14)
+    language  = java
+    container = seasar
+    package   = jp.attacklist.common.entity
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/attacklistdb
+    schema = {attacklistdb.$$NoNameSchema$$ as main}
+    user   = root
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = attacklist-common
+_/_/_/_/_/_/_/_/_/_/ {JDBC}
+2014-02-16 19:26:02,751 [main] INFO  (TorqueJDBCTransformTask#begin():100) - +------------------------------------------+
+2014-02-16 19:26:02,753 [main] INFO  (TorqueJDBCTransformTask#begin():101) - |                                          |
+2014-02-16 19:26:02,754 [main] INFO  (TorqueJDBCTransformTask#begin():102) - |                   JDBC                   |
+2014-02-16 19:26:02,754 [main] INFO  (TorqueJDBCTransformTask#begin():103) - |                                          |
+2014-02-16 19:26:02,760 [main] INFO  (TorqueJDBCTransformTask#begin():104) - +------------------------------------------+
+2014-02-16 19:26:02,794 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2014-02-16 19:26:02,795 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2014-02-16 19:26:02,796 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/attacklistdb
+2014-02-16 19:26:02,796 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = root
+2014-02-16 19:26:02,836 [main] INFO  (DfSchemaXmlSerializer#serialize():286) - 
+2014-02-16 19:26:02,837 [main] INFO  (DfSchemaXmlSerializer#serialize():287) - ...Starting to process JDBC to SchemaXML
+2014-02-16 19:26:02,838 [main] INFO  (DfSchemaXmlSerializer#doLoadPreviousSchema():1463) - ...Loading previous schema (schema diff process)
+2014-02-16 19:26:02,855 [main] INFO  (DTDResolver#resolveEntity():197) - ...Resolving XML by database.dtd in same package
+2014-02-16 19:26:02,921 [main] INFO  (DfSchemaXmlSerializer#generateXML():361) - ...Getting DB connection
+2014-02-16 19:26:02,928 [main] INFO  (DfDataSourceHandler#createConnection():168) - ...Connecting to database by data source:
+2014-02-16 19:26:03,174 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():235) -   product = MySQL 5.6.14
+2014-02-16 19:26:03,175 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():236) -   driver  = MySQL Connector Java mysql-connector-java-5.1.26 ( Revision: ${bzr.revision-id} ) for JDBC 4.0
+2014-02-16 19:26:03,177 [main] INFO  (DfSchemaXmlSerializer#generateXML():364) - ...Getting DB meta data
+2014-02-16 19:26:03,179 [main] INFO  (DfTableExtractor#doGetTableList():67) - ...Getting tables:
+2014-02-16 19:26:03,179 [main] INFO  (DfTableExtractor#doGetTableList():68) -   schema = {attacklistdb.$$NoNameSchema$$ as main}
+2014-02-16 19:26:03,180 [main] INFO  (DfTableExtractor#doGetTableList():69) -   types  = [TABLE, VIEW]
+2014-02-16 19:26:03,190 [main] INFO  (DfDbCommentExtractorBase#doSelectUserTabComments():121) - select table_type as OBJECT_TYPE, table_name as TABLE_NAME, table_comment as COMMENTS from information_schema.tables where table_schema = 'attacklistdb' order by table_name asc
+2014-02-16 19:26:03,195 [main] INFO  (DfDbCommentExtractorBase#doSelectUserColComments():168) - select table_name as TABLE_NAME, column_name as COLUMN_NAME, column_comment as COMMENTS from information_schema.columns where table_schema = 'attacklistdb' order by table_name asc, column_name asc
+2014-02-16 19:26:03,206 [main] INFO  (DfSchemaXmlSerializer#processTable():421) - 
+2014-02-16 19:26:03,207 [main] INFO  (DfSchemaXmlSerializer#processTable():422) - $ /= = = = = = = = = = = = = = = = = = = = = = = = = =
+2014-02-16 19:26:03,207 [main] INFO  (DfSchemaXmlSerializer#processTable():423) - $ [Table List]
+2014-02-16 19:26:03,208 [main] INFO  (DfSchemaXmlSerializer#doProcessTable():506) - $ attacklistdb.MEMBER(TABLE) // ���
+2014-02-16 19:26:03,253 [main] INFO  (DfSchemaXmlSerializer#processTable():435) - $ 
+2014-02-16 19:26:03,255 [main] INFO  (DfSchemaXmlSerializer#processTable():436) - $ [Table Count]
+2014-02-16 19:26:03,256 [main] INFO  (DfSchemaXmlSerializer#processTable():437) - $ 1
+2014-02-16 19:26:03,256 [main] INFO  (DfSchemaXmlSerializer#processTable():438) - $ = = = = = = = = = =/
+2014-02-16 19:26:03,257 [main] INFO  (DfSchemaXmlSerializer#processTable():439) - 
+2014-02-16 19:26:03,259 [main] INFO  (DfSchemaXmlSerializer#processSequence():795) - ...Getting sequences
+2014-02-16 19:26:03,264 [main] INFO  (DfSchemaXmlSerializer#serialize():301) - ...Serializing XML:
+2014-02-16 19:26:03,265 [main] INFO  (DfSchemaXmlSerializer#serialize():302) -   filePath = ./schema/project-schema-attacklist-db.xml
+2014-02-16 19:26:03,265 [main] INFO  (DfSchemaXmlSerializer#serialize():303) -   encoding = UTF-8
+2014-02-16 19:26:03,281 [main] INFO  (DfSchemaXmlSerializer#doLoadNextSchema():1481) - ...Loading next schema (schema diff process)
+2014-02-16 19:26:03,283 [main] INFO  (DTDResolver#resolveEntity():197) - ...Resolving XML by database.dtd in same package
+2014-02-16 19:26:03,313 [main] INFO  (DfSchemaXmlSerializer#doLoadNextSchema():1496) -  -> same as previous (schema diff)
+2014-02-16 19:26:03,314 [main] INFO  (DfDataSourceHandler#destroy():121) - ...closeReally()
+2014-02-16 19:26:03,319 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():150) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m00s565ms
+
+  DBFLUTE_CLIENT: {attacklist-db}
+    database  = mysql (MySQL 5.6.14)
+    language  = java
+    container = seasar
+    package   = jp.attacklist.common.entity
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/attacklistdb
+    schema = {attacklistdb.$$NoNameSchema$$ as main}
+    user   = root
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = attacklist-common
+_/_/_/_/_/_/_/_/_/_/ {JDBC}
+2014-02-16 19:26:03,925 [main] INFO  (TorqueDocumentationTask#begin():173) - +------------------------------------------+
+2014-02-16 19:26:03,927 [main] INFO  (TorqueDocumentationTask#begin():174) - |                                          |
+2014-02-16 19:26:03,927 [main] INFO  (TorqueDocumentationTask#begin():175) - |                   Doc                    |
+2014-02-16 19:26:03,928 [main] INFO  (TorqueDocumentationTask#begin():183) - |                                          |
+2014-02-16 19:26:03,928 [main] INFO  (TorqueDocumentationTask#begin():184) - +------------------------------------------+
+2014-02-16 19:26:03,959 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2014-02-16 19:26:03,960 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2014-02-16 19:26:03,960 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/attacklistdb
+2014-02-16 19:26:03,961 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = root
+2014-02-16 19:26:03,963 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():241) - 
+2014-02-16 19:26:03,963 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():242) - * * * * * * * * * * *
+2014-02-16 19:26:03,964 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():243) - *                   *
+2014-02-16 19:26:03,964 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():244) - *    Schema HTML    *
+2014-02-16 19:26:03,964 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():245) - *                   *
+2014-02-16 19:26:03,965 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():246) - * * * * * * * * * * *
+2014-02-16 19:26:04,058 [main] INFO  (DTDResolver#resolveEntity():197) - ...Resolving XML by database.dtd in same package
+2014-02-16 19:26:04,092 [main] INFO  (DfAbstractTexenTask#fireVelocityProcess():256) - generator.parse("doc/ControlDocument.vm", c);
+2014-02-16 19:26:04,131 [main] INFO  (Database#doEnableDocumentOutputDirectory():1174) - ...Setting up documentOutputDirectory: ./output/doc
+2014-02-16 19:26:04,134 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():62) - /=======================================
+2014-02-16 19:26:04,134 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():63) - ...Initializing additional primary keys.
+2014-02-16 19:26:04,136 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():88) - ==========/
+2014-02-16 19:26:04,137 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():62) - /=======================================
+2014-02-16 19:26:04,137 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():63) - ...Initializing additional unique keys.
+2014-02-16 19:26:04,138 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():83) - ==========/
+2014-02-16 19:26:04,142 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():67) - /=======================================
+2014-02-16 19:26:04,142 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():68) - ...Initializing additional foreign keys.
+2014-02-16 19:26:04,144 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():86) - ==========/
+2014-02-16 19:26:04,227 [main] INFO  (DfDocumentSelector#doLoadSchemaHistory():150) - ...Loading schema history
+2014-02-16 19:26:04,260 [main] INFO  (DfDocumentSelector#doLoadSchemaHistory():154) -  -> found history: count=1
+2014-02-16 19:26:04,292 [main] INFO  (DfRefreshResourceProcess#refreshResources():63) - ...Refreshing: [attacklist-common]
+2014-02-16 19:26:04,323 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():150) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m00s393ms
+
+  DBFLUTE_CLIENT: {attacklist-db}
+    database  = mysql
+    language  = java
+    container = seasar
+    package   = jp.attacklist.common.entity
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/attacklistdb
+    schema = {attacklistdb.$$NoNameSchema$$ as main}
+    user   = root
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = attacklist-common
+_/_/_/_/_/_/_/_/_/_/ {Doc}
+2014-02-16 19:26:06,201 [main] INFO  (TorqueDataModelTask#begin():104) - +------------------------------------------+
+2014-02-16 19:26:06,203 [main] INFO  (TorqueDataModelTask#begin():105) - |                                          |
+2014-02-16 19:26:06,204 [main] INFO  (TorqueDataModelTask#begin():106) - |                 Generate                 |
+2014-02-16 19:26:06,204 [main] INFO  (TorqueDataModelTask#begin():107) - |                                          |
+2014-02-16 19:26:06,205 [main] INFO  (TorqueDataModelTask#begin():108) - +------------------------------------------+
+2014-02-16 19:26:06,238 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2014-02-16 19:26:06,239 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2014-02-16 19:26:06,239 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/attacklistdb
+2014-02-16 19:26:06,240 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = root
+2014-02-16 19:26:06,245 [main] INFO  (TorqueDataModelTask#setupControlTemplate():153) - 
+2014-02-16 19:26:06,245 [main] INFO  (TorqueDataModelTask#setupControlTemplate():154) - * * * * * * * * *
+2014-02-16 19:26:06,246 [main] INFO  (TorqueDataModelTask#setupControlTemplate():155) - * Process Java  *
+2014-02-16 19:26:06,246 [main] INFO  (TorqueDataModelTask#setupControlTemplate():156) - * * * * * * * * *
+2014-02-16 19:26:06,247 [main] INFO  (TorqueDataModelTask#setupControlTemplate():158) - ...Using Java control: om/ControlGenerateJava.vm
+2014-02-16 19:26:06,314 [main] INFO  (DTDResolver#resolveEntity():197) - ...Resolving XML by database.dtd in same package
+2014-02-16 19:26:06,341 [main] INFO  (DfAbstractTexenTask#fireVelocityProcess():256) - generator.parse("om/ControlGenerateJava.vm", c);
+2014-02-16 19:26:06,495 [main] INFO  (Database#doEnableGenerateOutputDirectory():1142) - ...Setting up generateOutputDirectory: ../src/main/java
+2014-02-16 19:26:06,498 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():62) - /=======================================
+2014-02-16 19:26:06,499 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():63) - ...Initializing additional primary keys.
+2014-02-16 19:26:06,500 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():88) - ==========/
+2014-02-16 19:26:06,502 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():62) - /=======================================
+2014-02-16 19:26:06,503 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():63) - ...Initializing additional unique keys.
+2014-02-16 19:26:06,504 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():83) - ==========/
+2014-02-16 19:26:06,507 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():67) - /=======================================
+2014-02-16 19:26:06,508 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():68) - ...Initializing additional foreign keys.
+2014-02-16 19:26:06,509 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():86) - ==========/
+2014-02-16 19:26:06,517 [main] INFO  (DfIncludeQueryInitializer#initializeIncludeQuery():57) - /=============================
+2014-02-16 19:26:06,518 [main] INFO  (DfIncludeQueryInitializer#initializeIncludeQuery():58) - ...Initializing include query.
+2014-02-16 19:26:06,518 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():79) - String
+2014-02-16 19:26:06,519 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():79) - Number
+2014-02-16 19:26:06,519 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():79) - Date
+2014-02-16 19:26:06,520 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():84) -   NotEqual -> []
+2014-02-16 19:26:06,520 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():84) -   InScope -> []
+2014-02-16 19:26:06,521 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():84) -   NotInScope -> []
+2014-02-16 19:26:06,521 [main] INFO  (DfIncludeQueryInitializer#initializeIncludeQuery():60) - ========/
+2014-02-16 19:26:06,532 [main] INFO  (Database#info():2614) - public void parseAllCommon() {
+2014-02-16 19:26:06,534 [main] INFO  (Database#info():2614) -     parse('DBCurrent');
+2014-02-16 19:26:06,538 [main] INFO  (Database#info():2614) -     parse('DBFluteConfig');
+2014-02-16 19:26:06,561 [main] INFO  (Database#info():2614) -     parse('DBFluteInitializer');
+2014-02-16 19:26:06,578 [main] INFO  (Database#info():2614) -     parse('DBMetaInstanceHandler');
+2014-02-16 19:26:06,589 [main] INFO  (Database#info():2614) -     parse('EntityDefinedCommonColumn');
+2014-02-16 19:26:06,594 [main] INFO  (Database#info():2614) -     parse('ImplementedBehaviorSelector');
+2014-02-16 19:26:06,601 [main] INFO  (Database#info():2614) -     parse('ImplementedCommonColumnAutoSetupper');
+2014-02-16 19:26:06,610 [main] INFO  (Database#info():2614) -     parse('ImplementedInvokerAssistant');
+2014-02-16 19:26:06,616 [main] INFO  (Database#info():2614) -     parse('ImplementedSqlClauseCreator');
+2014-02-16 19:26:06,619 [main] INFO  (Database#info():2614) - }
+2014-02-16 19:26:06,620 [main] INFO  (Database#info():2614) - public void parseContainerConfig() {
+2014-02-16 19:26:06,621 [main] INFO  (Database#info():2614) -     parse('../resources/dbflute.dicon')
+2014-02-16 19:26:06,627 [main] INFO  (Database#info():2614) - }
+2014-02-16 19:26:06,635 [main] INFO  (DfOldClassHandler#info():880) - public void deleteOldTableClass() {
+2014-02-16 19:26:06,648 [main] INFO  (DfOldClassHandler#info():880) - }
+2014-02-16 19:26:06,649 [main] INFO  (Database#info():2614) - public void parseTableClass() {
+2014-02-16 19:26:06,650 [main] INFO  (Database#info():2614) -     parse('MEMBER');
+2014-02-16 19:26:06,906 [main] INFO  (Database#info():2614) - }
+2014-02-16 19:26:06,907 [main] INFO  (Database#info():2614) -  
+2014-02-16 19:26:06,919 [main] INFO  (DfRefreshResourceProcess#refreshResources():63) - ...Refreshing: [attacklist-common]
+2014-02-16 19:26:06,930 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():150) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m00s724ms
+
+  DBFLUTE_CLIENT: {attacklist-db}
+    database  = mysql
+    language  = java
+    container = seasar
+    package   = jp.attacklist.common.entity
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/attacklistdb
+    schema = {attacklistdb.$$NoNameSchema$$ as main}
+    user   = root
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = attacklist-common
+_/_/_/_/_/_/_/_/_/_/ {Generate}
+2014-02-16 19:26:07,502 [main] INFO  (DfSql2EntityTask#begin():100) - +------------------------------------------+
+2014-02-16 19:26:07,504 [main] INFO  (DfSql2EntityTask#begin():101) - |                                          |
+2014-02-16 19:26:07,504 [main] INFO  (DfSql2EntityTask#begin():102) - |                Sql2Entity                |
+2014-02-16 19:26:07,505 [main] INFO  (DfSql2EntityTask#begin():103) - |                                          |
+2014-02-16 19:26:07,505 [main] INFO  (DfSql2EntityTask#begin():104) - +------------------------------------------+
+2014-02-16 19:26:07,543 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2014-02-16 19:26:07,544 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2014-02-16 19:26:07,544 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/attacklistdb
+2014-02-16 19:26:07,544 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = root
+2014-02-16 19:26:07,549 [main] INFO  (DfSql2EntityTask#setupControlTemplate():172) - 
+2014-02-16 19:26:07,550 [main] INFO  (DfSql2EntityTask#setupControlTemplate():173) - * * * * * * * * *
+2014-02-16 19:26:07,550 [main] INFO  (DfSql2EntityTask#setupControlTemplate():174) - * Process Java  *
+2014-02-16 19:26:07,551 [main] INFO  (DfSql2EntityTask#setupControlTemplate():175) - * * * * * * * * *
+2014-02-16 19:26:07,551 [main] INFO  (DfSql2EntityTask#setupControlTemplate():177) - ...Using Java control: om/ControlSql2EntityJava.vm
+2014-02-16 19:26:07,556 [main] INFO  (DTDResolver#resolveEntity():197) - ...Resolving XML by database.dtd in same package
+2014-02-16 19:26:07,590 [main] INFO  (DfSqlFileFireMan#fire():90) - {Fired SQL}: success=0 failure=0 (in 0 files)
+2014-02-16 19:26:07,657 [main] INFO  (DfSql2EntityTask#initControlContext():329) - 
+2014-02-16 19:26:07,657 [main] INFO  (DfSql2EntityTask#initControlContext():330) - ...Preparing generation of customize-entities and parameter-beans
+2014-02-16 19:26:07,658 [main] INFO  (DfSql2EntityTask#initControlContext():331) - * * * * * * * * * *
+2014-02-16 19:26:07,658 [main] INFO  (DfSql2EntityTask#initControlContext():332) - * CustomizeEntity *
+2014-02-16 19:26:07,659 [main] INFO  (DfSql2EntityTask#initControlContext():333) - * * * * * * * * * *
+2014-02-16 19:26:07,659 [main] INFO  (DfSql2EntityTask#showParameterBean():899) - * * * * * * * * *
+2014-02-16 19:26:07,660 [main] INFO  (DfSql2EntityTask#showParameterBean():900) - * ParameterBean *
+2014-02-16 19:26:07,660 [main] INFO  (DfSql2EntityTask#showParameterBean():901) - * * * * * * * * *
+2014-02-16 19:26:07,663 [main] INFO  (DfAbstractTexenTask#fireVelocityProcess():256) - generator.parse("om/ControlSql2EntityJava.vm", c);
+2014-02-16 19:26:07,763 [main] INFO  (Database#doEnableSql2EntityOutputDirectory():1158) - ...Setting up sql2EntityOutputDirectory: ../src/main/java
+2014-02-16 19:26:07,766 [main] INFO  (DfOldClassHandler#info():880) - public void deleteOldCustomizeClass() {
+2014-02-16 19:26:07,773 [main] INFO  (DfOldClassHandler#info():880) - }
+2014-02-16 19:26:07,773 [main] INFO  (Database#info():2614) - public void parseCustomizeEntity() {
+2014-02-16 19:26:07,774 [main] INFO  (Database#info():2614) - }
+2014-02-16 19:26:07,780 [main] INFO  (DfSql2EntityTask#showTargetSqlFileInformation():321) - 
+/- - - - - - - - - - - - - - - - - - - - - - - -
+Target SQL files: 0
+
+- - - - - - - - - -/
+2014-02-16 19:26:07,782 [main] INFO  (DfRefreshResourceProcess#refreshResources():63) - ...Refreshing: [attacklist-common]
+2014-02-16 19:26:07,787 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():150) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m00s283ms
+
+  DBFLUTE_CLIENT: {attacklist-db}
+    database  = mysql
+    language  = java
+    container = seasar
+    package   = jp.attacklist.common.entity
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/attacklistdb
+    schema = {attacklistdb.$$NoNameSchema$$ as main}
+    user   = root
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = attacklist-common
+_/_/_/_/_/_/_/_/_/_/ {Sql2Entity}
+2014-02-16 19:27:45,497 [main] INFO  (DfReplaceSchemaTask#begin():87) - +------------------------------------------+
+2014-02-16 19:27:45,505 [main] INFO  (DfReplaceSchemaTask#begin():88) - |                                          |
+2014-02-16 19:27:45,505 [main] INFO  (DfReplaceSchemaTask#begin():89) - |              ReplaceSchema               |
+2014-02-16 19:27:45,523 [main] INFO  (DfReplaceSchemaTask#begin():97) - |                                          |
+2014-02-16 19:27:45,524 [main] INFO  (DfReplaceSchemaTask#begin():98) - +------------------------------------------+
+2014-02-16 19:27:45,525 [main] INFO  (DfReplaceSchemaTask#waitBeforeReps():329) - ...Waiting for your GO SIGN from stdin before ReplaceSchema:
+2014-02-16 19:27:48,660 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2014-02-16 19:27:48,661 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2014-02-16 19:27:48,662 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/attacklistdb
+2014-02-16 19:27:48,662 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = root
+2014-02-16 19:27:48,674 [main] INFO  (DfDataSourceHandler#createConnection():168) - ...Connecting to database by data source:
+2014-02-16 19:27:48,901 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():235) -   product = MySQL 5.6.14
+2014-02-16 19:27:48,902 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():236) -   driver  = MySQL Connector Java mysql-connector-java-5.1.26 ( Revision: ${bzr.revision-id} ) for JDBC 4.0
+2014-02-16 19:27:48,917 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():207) - 
+2014-02-16 19:27:48,918 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():208) - * * * * * * * * * * *
+2014-02-16 19:27:48,919 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():209) - *                   *
+2014-02-16 19:27:48,919 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():210) - * Initialize Schema *
+2014-02-16 19:27:48,920 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():211) - *                   *
+2014-02-16 19:27:48,921 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():212) - * * * * * * * * * * *
+2014-02-16 19:27:48,934 [main] INFO  (DfTableExtractor#doGetTableList():67) - ...Getting tables:
+2014-02-16 19:27:48,946 [main] INFO  (DfTableExtractor#doGetTableList():68) -   schema = {attacklistdb.$$NoNameSchema$$ as main}
+2014-02-16 19:27:48,950 [main] INFO  (DfTableExtractor#doGetTableList():69) -   types  = [TABLE, VIEW]
+2014-02-16 19:27:48,995 [main] INFO  (DfSchemaInitializerJdbc#logReplaceSql():576) - truncate table MEMBER
+2014-02-16 19:27:49,002 [main] INFO  (DfSchemaInitializerJdbc#logReplaceSql():576) - drop table MEMBER
+2014-02-16 19:27:49,026 [main] INFO  (DfCreateSchemaProcess#createSchema():244) - 
+2014-02-16 19:27:49,026 [main] INFO  (DfCreateSchemaProcess#createSchema():245) - * * * * * * * * *
+2014-02-16 19:27:49,027 [main] INFO  (DfCreateSchemaProcess#createSchema():246) - *               *
+2014-02-16 19:27:49,027 [main] INFO  (DfCreateSchemaProcess#createSchema():247) - * Create Schema *
+2014-02-16 19:27:49,028 [main] INFO  (DfCreateSchemaProcess#createSchema():248) - *               *
+2014-02-16 19:27:49,028 [main] INFO  (DfCreateSchemaProcess#createSchema():249) - * * * * * * * * *
+2014-02-16 19:27:49,033 [main] INFO  (DfSqlFileFireMan#fire():65) - ...Firing: replace-schema.sql
+2014-02-16 19:27:49,036 [main] INFO  (DfSqlFileRunnerBase#traceSql():168) - 
+CREATE TABLE MEMBER
+(
+	MEMBER_ID BIGINT NOT NULL AUTO_INCREMENT COMMENT '���ID',
+	MAIL_ADDRESS VARCHAR(250) NOT NULL UNIQUE COMMENT '���[���A�h���X',
+	PRIMARY KEY (MEMBER_ID)
+) COMMENT = '���'
+2014-02-16 19:27:49,061 [main] INFO  (DfSqlFileRunnerBase#traceSql():168) - 
+CREATE TABLE MEMBER_SECURITY
+(
+	MEMBER_ID BIGINT NOT NULL UNIQUE COMMENT '���ID',
+	PASSWORD VARCHAR(20) NOT NULL COMMENT '�p�X���[�h'
+) COMMENT = '����Z�L�����e�B���'
+2014-02-16 19:27:49,088 [main] INFO  (DfSqlFileRunnerBase#traceSql():168) - 
+CREATE TABLE TWEET
+(
+	TWEET_ID BIGINT NOT NULL AUTO_INCREMENT COMMENT '�c�C�[�g�CD',
+	MESSAGE VARCHAR(140) NOT NULL COMMENT '�߂����[��',
+	MEMBER_ID BIGINT NOT NULL COMMENT '���ID',
+	PRIMARY KEY (TWEET_ID)
+) COMMENT = '�c�C�[�g'
+2014-02-16 19:27:49,110 [main] INFO  (DfSqlFileRunnerBase#traceSql():168) - 
+/* Create Foreign Keys */
+
+ALTER TABLE MEMBER_SECURITY
+	ADD FOREIGN KEY (MEMBER_ID)
+	REFERENCES MEMBER (MEMBER_ID)
+	ON UPDATE RESTRICT
+	ON DELETE RESTRICT
+2014-02-16 19:27:49,149 [main] INFO  (DfSqlFileRunnerBase#traceSql():168) - 
+ALTER TABLE TWEET
+	ADD FOREIGN KEY (MEMBER_ID)
+	REFERENCES MEMBER (MEMBER_ID)
+	ON UPDATE RESTRICT
+	ON DELETE RESTRICT
+2014-02-16 19:27:49,181 [main] INFO  (DfSqlFileRunnerBase#traceResult():172) -  -> success=5 failure=0
+2014-02-16 19:27:49,181 [main] INFO  (DfSqlFileFireMan#fire():90) - {Create Schema}: success=5 failure=0 (in 1 files)
+2014-02-16 19:27:49,211 [main] INFO  (DfLoadDataProcess#execute():129) - 
+2014-02-16 19:27:49,212 [main] INFO  (DfLoadDataProcess#execute():130) - * * * * * * * * * * *
+2014-02-16 19:27:49,212 [main] INFO  (DfLoadDataProcess#execute():131) - *                   *
+2014-02-16 19:27:49,213 [main] INFO  (DfLoadDataProcess#execute():132) - * Load Data         *
+2014-02-16 19:27:49,213 [main] INFO  (DfLoadDataProcess#execute():133) - *                   *
+2014-02-16 19:27:49,214 [main] INFO  (DfLoadDataProcess#execute():134) - * * * * * * * * * * *
+2014-02-16 19:27:49,234 [main] INFO  (DfTakeFinallyProcess#takeFinally():219) - 
+2014-02-16 19:27:49,234 [main] INFO  (DfTakeFinallyProcess#takeFinally():220) - * * * * * * * **
+2014-02-16 19:27:49,235 [main] INFO  (DfTakeFinallyProcess#takeFinally():221) - *              *
+2014-02-16 19:27:49,235 [main] INFO  (DfTakeFinallyProcess#takeFinally():222) - * Take Finally *
+2014-02-16 19:27:49,235 [main] INFO  (DfTakeFinallyProcess#takeFinally():223) - *              *
+2014-02-16 19:27:49,236 [main] INFO  (DfTakeFinallyProcess#takeFinally():224) - * * * * * * * **
+2014-02-16 19:27:49,242 [main] INFO  (DfSqlFileFireMan#fire():65) - ...Firing: take-finally.sql
+2014-02-16 19:27:49,243 [main] INFO  (DfSqlFileRunnerBase#traceResult():172) -  -> success=0 failure=0
+2014-02-16 19:27:49,243 [main] INFO  (DfSqlFileFireMan#fire():90) - {Take Finally}: success=0 failure=0 (in 1 files)
+2014-02-16 19:27:49,245 [main] INFO  (DfDataSourceHandler#destroy():121) - ...closeReally()
+2014-02-16 19:27:49,252 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():150) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m03s751ms
+
+  DBFLUTE_CLIENT: {attacklist-db}
+    database  = mysql (MySQL 5.6.14)
+    language  = java
+    container = seasar
+    package   = jp.attacklist.common.entity
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/attacklistdb
+    schema = {attacklistdb.$$NoNameSchema$$ as main}
+    user   = root
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = attacklist-common
+
+ {Create Schema}: success=5 failure=0 (in 1 files)
+  o replace-schema.sql
+
+ {Load Data}: loaded-files=0
+  - (no data file)
+
+ {Take Finally}: success=0 failure=0 (in 1 files)
+  o take-finally.sql
+_/_/_/_/_/_/_/_/_/_/ {ReplaceSchema}
+2014-02-16 19:27:49,876 [main] INFO  (TorqueJDBCTransformTask#begin():100) - +------------------------------------------+
+2014-02-16 19:27:49,878 [main] INFO  (TorqueJDBCTransformTask#begin():101) - |                                          |
+2014-02-16 19:27:49,878 [main] INFO  (TorqueJDBCTransformTask#begin():102) - |                   JDBC                   |
+2014-02-16 19:27:49,879 [main] INFO  (TorqueJDBCTransformTask#begin():103) - |                                          |
+2014-02-16 19:27:49,879 [main] INFO  (TorqueJDBCTransformTask#begin():104) - +------------------------------------------+
+2014-02-16 19:27:49,910 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2014-02-16 19:27:49,910 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2014-02-16 19:27:49,911 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/attacklistdb
+2014-02-16 19:27:49,911 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = root
+2014-02-16 19:27:49,943 [main] INFO  (DfSchemaXmlSerializer#serialize():286) - 
+2014-02-16 19:27:49,943 [main] INFO  (DfSchemaXmlSerializer#serialize():287) - ...Starting to process JDBC to SchemaXML
+2014-02-16 19:27:49,944 [main] INFO  (DfSchemaXmlSerializer#doLoadPreviousSchema():1463) - ...Loading previous schema (schema diff process)
+2014-02-16 19:27:49,956 [main] INFO  (DTDResolver#resolveEntity():197) - ...Resolving XML by database.dtd in same package
+2014-02-16 19:27:50,005 [main] INFO  (DfSchemaXmlSerializer#generateXML():361) - ...Getting DB connection
+2014-02-16 19:27:50,022 [main] INFO  (DfDataSourceHandler#createConnection():168) - ...Connecting to database by data source:
+2014-02-16 19:27:50,205 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():235) -   product = MySQL 5.6.14
+2014-02-16 19:27:50,205 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():236) -   driver  = MySQL Connector Java mysql-connector-java-5.1.26 ( Revision: ${bzr.revision-id} ) for JDBC 4.0
+2014-02-16 19:27:50,207 [main] INFO  (DfSchemaXmlSerializer#generateXML():364) - ...Getting DB meta data
+2014-02-16 19:27:50,208 [main] INFO  (DfTableExtractor#doGetTableList():67) - ...Getting tables:
+2014-02-16 19:27:50,208 [main] INFO  (DfTableExtractor#doGetTableList():68) -   schema = {attacklistdb.$$NoNameSchema$$ as main}
+2014-02-16 19:27:50,209 [main] INFO  (DfTableExtractor#doGetTableList():69) -   types  = [TABLE, VIEW]
+2014-02-16 19:27:50,216 [main] INFO  (DfDbCommentExtractorBase#doSelectUserTabComments():121) - select table_type as OBJECT_TYPE, table_name as TABLE_NAME, table_comment as COMMENTS from information_schema.tables where table_schema = 'attacklistdb' order by table_name asc
+2014-02-16 19:27:50,221 [main] INFO  (DfDbCommentExtractorBase#doSelectUserColComments():168) - select table_name as TABLE_NAME, column_name as COLUMN_NAME, column_comment as COMMENTS from information_schema.columns where table_schema = 'attacklistdb' order by table_name asc, column_name asc
+2014-02-16 19:27:50,229 [main] INFO  (DfSchemaXmlSerializer#processTable():421) - 
+2014-02-16 19:27:50,230 [main] INFO  (DfSchemaXmlSerializer#processTable():422) - $ /= = = = = = = = = = = = = = = = = = = = = = = = = =
+2014-02-16 19:27:50,230 [main] INFO  (DfSchemaXmlSerializer#processTable():423) - $ [Table List]
+2014-02-16 19:27:50,231 [main] INFO  (DfSchemaXmlSerializer#doProcessTable():506) - $ attacklistdb.MEMBER(TABLE) // ���
+2014-02-16 19:27:50,262 [main] INFO  (DfSchemaXmlSerializer#doProcessTable():506) - $ attacklistdb.MEMBER_SECURITY(TABLE) // ����Z�L�����e�B���
+2014-02-16 19:27:50,277 [main] INFO  (DfSchemaXmlSerializer#doProcessTable():506) - $ attacklistdb.TWEET(TABLE) // �c�C�[�g
+2014-02-16 19:27:50,288 [main] INFO  (DfSchemaXmlSerializer#processTable():435) - $ 
+2014-02-16 19:27:50,289 [main] INFO  (DfSchemaXmlSerializer#processTable():436) - $ [Table Count]
+2014-02-16 19:27:50,289 [main] INFO  (DfSchemaXmlSerializer#processTable():437) - $ 3
+2014-02-16 19:27:50,290 [main] INFO  (DfSchemaXmlSerializer#processTable():438) - $ = = = = = = = = = =/
+2014-02-16 19:27:50,290 [main] INFO  (DfSchemaXmlSerializer#processTable():439) - 
+2014-02-16 19:27:50,291 [main] INFO  (DfSchemaXmlSerializer#processSequence():795) - ...Getting sequences
+2014-02-16 19:27:50,294 [main] INFO  (DfSchemaXmlSerializer#serialize():301) - ...Serializing XML:
+2014-02-16 19:27:50,295 [main] INFO  (DfSchemaXmlSerializer#serialize():302) -   filePath = ./schema/project-schema-attacklist-db.xml
+2014-02-16 19:27:50,295 [main] INFO  (DfSchemaXmlSerializer#serialize():303) -   encoding = UTF-8
+2014-02-16 19:27:50,314 [main] INFO  (DfSchemaXmlSerializer#doLoadNextSchema():1481) - ...Loading next schema (schema diff process)
+2014-02-16 19:27:50,315 [main] INFO  (DTDResolver#resolveEntity():197) - ...Resolving XML by database.dtd in same package
+2014-02-16 19:27:50,349 [main] INFO  (DfSchemaXmlSerializer#doLoadNextSchema():1486) -  -> different from previous (schema diff)
+2014-02-16 19:27:50,351 [main] INFO  (DfSchemaXmlSerializer#doLoadNextSchema():1488) - ...Serializing schema-diff:
+2014-02-16 19:27:50,352 [main] INFO  (DfSchemaXmlSerializer#doLoadNextSchema():1489) -   filePath = ./schema/project-history-attacklist-db.diffmap
+2014-02-16 19:27:50,366 [main] INFO  (DfDataSourceHandler#destroy():121) - ...closeReally()
+2014-02-16 19:27:50,371 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():150) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m00s491ms
+
+  DBFLUTE_CLIENT: {attacklist-db}
+    database  = mysql (MySQL 5.6.14)
+    language  = java
+    container = seasar
+    package   = jp.attacklist.common.entity
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/attacklistdb
+    schema = {attacklistdb.$$NoNameSchema$$ as main}
+    user   = root
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = attacklist-common
+_/_/_/_/_/_/_/_/_/_/ {JDBC}
+2014-02-16 19:27:51,074 [main] INFO  (TorqueDocumentationTask#begin():173) - +------------------------------------------+
+2014-02-16 19:27:51,076 [main] INFO  (TorqueDocumentationTask#begin():174) - |                                          |
+2014-02-16 19:27:51,076 [main] INFO  (TorqueDocumentationTask#begin():175) - |                   Doc                    |
+2014-02-16 19:27:51,077 [main] INFO  (TorqueDocumentationTask#begin():183) - |                                          |
+2014-02-16 19:27:51,077 [main] INFO  (TorqueDocumentationTask#begin():184) - +------------------------------------------+
+2014-02-16 19:27:51,133 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2014-02-16 19:27:51,134 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2014-02-16 19:27:51,135 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/attacklistdb
+2014-02-16 19:27:51,135 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = root
+2014-02-16 19:27:51,138 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():241) - 
+2014-02-16 19:27:51,139 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():242) - * * * * * * * * * * *
+2014-02-16 19:27:51,139 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():243) - *                   *
+2014-02-16 19:27:51,140 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():244) - *    Schema HTML    *
+2014-02-16 19:27:51,140 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():245) - *                   *
+2014-02-16 19:27:51,141 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():246) - * * * * * * * * * * *
+2014-02-16 19:27:51,238 [main] INFO  (DTDResolver#resolveEntity():197) - ...Resolving XML by database.dtd in same package
+2014-02-16 19:27:51,287 [main] INFO  (DfAbstractTexenTask#fireVelocityProcess():256) - generator.parse("doc/ControlDocument.vm", c);
+2014-02-16 19:27:51,330 [main] INFO  (Database#doEnableDocumentOutputDirectory():1174) - ...Setting up documentOutputDirectory: ./output/doc
+2014-02-16 19:27:51,334 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():62) - /=======================================
+2014-02-16 19:27:51,335 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():63) - ...Initializing additional primary keys.
+2014-02-16 19:27:51,337 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():88) - ==========/
+2014-02-16 19:27:51,339 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():62) - /=======================================
+2014-02-16 19:27:51,340 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():63) - ...Initializing additional unique keys.
+2014-02-16 19:27:51,342 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():83) - ==========/
+2014-02-16 19:27:51,346 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():67) - /=======================================
+2014-02-16 19:27:51,354 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():68) - ...Initializing additional foreign keys.
+2014-02-16 19:27:51,356 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():86) - ==========/
+2014-02-16 19:27:51,462 [main] INFO  (DfDocumentSelector#doLoadSchemaHistory():150) - ...Loading schema history
+2014-02-16 19:27:51,483 [main] INFO  (DfDocumentSelector#doLoadSchemaHistory():154) -  -> found history: count=2
+2014-02-16 19:27:51,508 [main] INFO  (DfRefreshResourceProcess#refreshResources():63) - ...Refreshing: [attacklist-common]
+2014-02-16 19:27:51,531 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():150) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m00s453ms
+
+  DBFLUTE_CLIENT: {attacklist-db}
+    database  = mysql
+    language  = java
+    container = seasar
+    package   = jp.attacklist.common.entity
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/attacklistdb
+    schema = {attacklistdb.$$NoNameSchema$$ as main}
+    user   = root
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = attacklist-common
+_/_/_/_/_/_/_/_/_/_/ {Doc}
+2014-02-16 19:27:53,254 [main] INFO  (TorqueDataModelTask#begin():104) - +------------------------------------------+
+2014-02-16 19:27:53,255 [main] INFO  (TorqueDataModelTask#begin():105) - |                                          |
+2014-02-16 19:27:53,256 [main] INFO  (TorqueDataModelTask#begin():106) - |                 Generate                 |
+2014-02-16 19:27:53,256 [main] INFO  (TorqueDataModelTask#begin():107) - |                                          |
+2014-02-16 19:27:53,257 [main] INFO  (TorqueDataModelTask#begin():108) - +------------------------------------------+
+2014-02-16 19:27:53,285 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2014-02-16 19:27:53,285 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2014-02-16 19:27:53,286 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/attacklistdb
+2014-02-16 19:27:53,286 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = root
+2014-02-16 19:27:53,293 [main] INFO  (TorqueDataModelTask#setupControlTemplate():153) - 
+2014-02-16 19:27:53,299 [main] INFO  (TorqueDataModelTask#setupControlTemplate():154) - * * * * * * * * *
+2014-02-16 19:27:53,300 [main] INFO  (TorqueDataModelTask#setupControlTemplate():155) - * Process Java  *
+2014-02-16 19:27:53,300 [main] INFO  (TorqueDataModelTask#setupControlTemplate():156) - * * * * * * * * *
+2014-02-16 19:27:53,301 [main] INFO  (TorqueDataModelTask#setupControlTemplate():158) - ...Using Java control: om/ControlGenerateJava.vm
+2014-02-16 19:27:53,368 [main] INFO  (DTDResolver#resolveEntity():197) - ...Resolving XML by database.dtd in same package
+2014-02-16 19:27:53,401 [main] INFO  (DfAbstractTexenTask#fireVelocityProcess():256) - generator.parse("om/ControlGenerateJava.vm", c);
+2014-02-16 19:27:53,565 [main] INFO  (Database#doEnableGenerateOutputDirectory():1142) - ...Setting up generateOutputDirectory: ../src/main/java
+2014-02-16 19:27:53,567 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():62) - /=======================================
+2014-02-16 19:27:53,568 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():63) - ...Initializing additional primary keys.
+2014-02-16 19:27:53,569 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():88) - ==========/
+2014-02-16 19:27:53,570 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():62) - /=======================================
+2014-02-16 19:27:53,571 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():63) - ...Initializing additional unique keys.
+2014-02-16 19:27:53,573 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():83) - ==========/
+2014-02-16 19:27:53,577 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():67) - /=======================================
+2014-02-16 19:27:53,577 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():68) - ...Initializing additional foreign keys.
+2014-02-16 19:27:53,579 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():86) - ==========/
+2014-02-16 19:27:53,588 [main] INFO  (DfIncludeQueryInitializer#initializeIncludeQuery():57) - /=============================
+2014-02-16 19:27:53,588 [main] INFO  (DfIncludeQueryInitializer#initializeIncludeQuery():58) - ...Initializing include query.
+2014-02-16 19:27:53,589 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():79) - String
+2014-02-16 19:27:53,589 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():79) - Number
+2014-02-16 19:27:53,590 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():79) - Date
+2014-02-16 19:27:53,590 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():84) -   NotEqual -> []
+2014-02-16 19:27:53,591 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():84) -   InScope -> []
+2014-02-16 19:27:53,591 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():84) -   NotInScope -> []
+2014-02-16 19:27:53,592 [main] INFO  (DfIncludeQueryInitializer#initializeIncludeQuery():60) - ========/
+2014-02-16 19:27:53,604 [main] INFO  (Database#info():2614) - public void parseAllCommon() {
+2014-02-16 19:27:53,605 [main] INFO  (Database#info():2614) -     parse('DBCurrent');
+2014-02-16 19:27:53,609 [main] INFO  (Database#info():2614) -     parse('DBFluteConfig');
+2014-02-16 19:27:53,631 [main] INFO  (Database#info():2614) -     parse('DBFluteInitializer');
+2014-02-16 19:27:53,637 [main] INFO  (Database#info():2614) -     parse('DBMetaInstanceHandler');
+2014-02-16 19:27:53,655 [main] INFO  (Database#info():2614) -     parse('EntityDefinedCommonColumn');
+2014-02-16 19:27:53,661 [main] INFO  (Database#info():2614) -     parse('ImplementedBehaviorSelector');
+2014-02-16 19:27:53,667 [main] INFO  (Database#info():2614) -     parse('ImplementedCommonColumnAutoSetupper');
+2014-02-16 19:27:53,675 [main] INFO  (Database#info():2614) -     parse('ImplementedInvokerAssistant');
+2014-02-16 19:27:53,680 [main] INFO  (Database#info():2614) -     parse('ImplementedSqlClauseCreator');
+2014-02-16 19:27:53,683 [main] INFO  (Database#info():2614) - }
+2014-02-16 19:27:53,684 [main] INFO  (Database#info():2614) - public void parseContainerConfig() {
+2014-02-16 19:27:53,685 [main] INFO  (Database#info():2614) -     parse('../resources/dbflute.dicon')
+2014-02-16 19:27:53,692 [main] INFO  (Database#info():2614) - }
+2014-02-16 19:27:53,700 [main] INFO  (DfOldClassHandler#info():880) - public void deleteOldTableClass() {
+2014-02-16 19:27:53,727 [main] INFO  (DfOldClassHandler#info():880) - }
+2014-02-16 19:27:53,728 [main] INFO  (Database#info():2614) - public void parseTableClass() {
+2014-02-16 19:27:53,729 [main] INFO  (Database#info():2614) -     parse('MEMBER');
+2014-02-16 19:27:54,090 [main] INFO  (Database#info():2614) -     parse('MEMBER_SECURITY');
+2014-02-16 19:27:54,386 [main] INFO  (Database#info():2614) -     parse('TWEET');
+2014-02-16 19:27:54,597 [main] INFO  (Database#info():2614) - }
+2014-02-16 19:27:54,597 [main] INFO  (Database#info():2614) -  
+2014-02-16 19:27:54,618 [main] INFO  (DfRefreshResourceProcess#refreshResources():63) - ...Refreshing: [attacklist-common]
+2014-02-16 19:27:54,646 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():150) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m01s384ms
+
+  DBFLUTE_CLIENT: {attacklist-db}
+    database  = mysql
+    language  = java
+    container = seasar
+    package   = jp.attacklist.common.entity
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/attacklistdb
+    schema = {attacklistdb.$$NoNameSchema$$ as main}
+    user   = root
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = attacklist-common
+_/_/_/_/_/_/_/_/_/_/ {Generate}
+2014-02-16 19:27:56,121 [main] INFO  (DfOutsideSqlTestTask#begin():72) - +------------------------------------------+
+2014-02-16 19:27:56,124 [main] INFO  (DfOutsideSqlTestTask#begin():73) - |                                          |
+2014-02-16 19:27:56,125 [main] INFO  (DfOutsideSqlTestTask#begin():74) - |              OutsideSqlTest              |
+2014-02-16 19:27:56,127 [main] INFO  (DfOutsideSqlTestTask#begin():75) - |                                          |
+2014-02-16 19:27:56,128 [main] INFO  (DfOutsideSqlTestTask#begin():76) - +------------------------------------------+
+2014-02-16 19:27:56,229 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2014-02-16 19:27:56,230 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2014-02-16 19:27:56,230 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/attacklistdb
+2014-02-16 19:27:56,230 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = root
+2014-02-16 19:27:56,305 [main] INFO  (DfSqlFileFireMan#fire():90) - {Fired SQL}: success=0 failure=0 (in 0 files)
+2014-02-16 19:27:56,313 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():150) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m00s185ms
+
+  DBFLUTE_CLIENT: {attacklist-db}
+    database  = mysql
+    language  = java
+    container = seasar
+    package   = jp.attacklist.common.entity
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/attacklistdb
+    schema = {attacklistdb.$$NoNameSchema$$ as main}
+    user   = root
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = attacklist-common
+
+ {Checked SQL}
+_/_/_/_/_/_/_/_/_/_/ {OutsideSqlTest}
+2014-02-16 19:27:57,384 [main] INFO  (DfSql2EntityTask#begin():100) - +------------------------------------------+
+2014-02-16 19:27:57,386 [main] INFO  (DfSql2EntityTask#begin():101) - |                                          |
+2014-02-16 19:27:57,387 [main] INFO  (DfSql2EntityTask#begin():102) - |                Sql2Entity                |
+2014-02-16 19:27:57,387 [main] INFO  (DfSql2EntityTask#begin():103) - |                                          |
+2014-02-16 19:27:57,388 [main] INFO  (DfSql2EntityTask#begin():104) - +------------------------------------------+
+2014-02-16 19:27:57,449 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2014-02-16 19:27:57,450 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2014-02-16 19:27:57,450 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/attacklistdb
+2014-02-16 19:27:57,450 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = root
+2014-02-16 19:27:57,460 [main] INFO  (DfSql2EntityTask#setupControlTemplate():172) - 
+2014-02-16 19:27:57,460 [main] INFO  (DfSql2EntityTask#setupControlTemplate():173) - * * * * * * * * *
+2014-02-16 19:27:57,461 [main] INFO  (DfSql2EntityTask#setupControlTemplate():174) - * Process Java  *
+2014-02-16 19:27:57,461 [main] INFO  (DfSql2EntityTask#setupControlTemplate():175) - * * * * * * * * *
+2014-02-16 19:27:57,462 [main] INFO  (DfSql2EntityTask#setupControlTemplate():177) - ...Using Java control: om/ControlSql2EntityJava.vm
+2014-02-16 19:27:57,470 [main] INFO  (DTDResolver#resolveEntity():197) - ...Resolving XML by database.dtd in same package
+2014-02-16 19:27:57,545 [main] INFO  (DfSqlFileFireMan#fire():90) - {Fired SQL}: success=0 failure=0 (in 0 files)
+2014-02-16 19:27:57,618 [main] INFO  (DfSql2EntityTask#initControlContext():329) - 
+2014-02-16 19:27:57,618 [main] INFO  (DfSql2EntityTask#initControlContext():330) - ...Preparing generation of customize-entities and parameter-beans
+2014-02-16 19:27:57,619 [main] INFO  (DfSql2EntityTask#initControlContext():331) - * * * * * * * * * *
+2014-02-16 19:27:57,619 [main] INFO  (DfSql2EntityTask#initControlContext():332) - * CustomizeEntity *
+2014-02-16 19:27:57,619 [main] INFO  (DfSql2EntityTask#initControlContext():333) - * * * * * * * * * *
+2014-02-16 19:27:57,620 [main] INFO  (DfSql2EntityTask#showParameterBean():899) - * * * * * * * * *
+2014-02-16 19:27:57,620 [main] INFO  (DfSql2EntityTask#showParameterBean():900) - * ParameterBean *
+2014-02-16 19:27:57,620 [main] INFO  (DfSql2EntityTask#showParameterBean():901) - * * * * * * * * *
+2014-02-16 19:27:57,622 [main] INFO  (DfAbstractTexenTask#fireVelocityProcess():256) - generator.parse("om/ControlSql2EntityJava.vm", c);
+2014-02-16 19:27:57,735 [main] INFO  (Database#doEnableSql2EntityOutputDirectory():1158) - ...Setting up sql2EntityOutputDirectory: ../src/main/java
+2014-02-16 19:27:57,738 [main] INFO  (DfOldClassHandler#info():880) - public void deleteOldCustomizeClass() {
+2014-02-16 19:27:57,744 [main] INFO  (DfOldClassHandler#info():880) - }
+2014-02-16 19:27:57,744 [main] INFO  (Database#info():2614) - public void parseCustomizeEntity() {
+2014-02-16 19:27:57,745 [main] INFO  (Database#info():2614) - }
+2014-02-16 19:27:57,750 [main] INFO  (DfSql2EntityTask#showTargetSqlFileInformation():321) - 
+/- - - - - - - - - - - - - - - - - - - - - - - -
+Target SQL files: 0
+
+- - - - - - - - - -/
+2014-02-16 19:27:57,752 [main] INFO  (DfRefreshResourceProcess#refreshResources():63) - ...Refreshing: [attacklist-common]
+2014-02-16 19:27:57,757 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():150) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m00s371ms
+
+  DBFLUTE_CLIENT: {attacklist-db}
+    database  = mysql
+    language  = java
+    container = seasar
+    package   = jp.attacklist.common.entity
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/attacklistdb
+    schema = {attacklistdb.$$NoNameSchema$$ as main}
+    user   = root
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = attacklist-common
+_/_/_/_/_/_/_/_/_/_/ {Sql2Entity}

@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>attacklist-db schema</title>
+	<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: Verdana, "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", Meiryo, "メイリオ", "MS P Gothic", "MS Pゴシック", sans-serif;
+	font-size: 80%;
+	margin: 10px 5px 5px 15px;
+	background-color: #ffffe0;
+}
+
+/* heading */
+h1 {
+	font-size: 1.5em;
+	border-bottom: 2px solid #af0000;
+	border-top: 2px solid #af0000;
+}
+h2 {
+	margin: 30px 0 5px 0;
+	font-size: 1.8em;
+	border-bottom: 2px solid #af0000;
+	border-left: 10px solid #af0000;
+	text-indent: 10px;
+}
+h3 {
+	padding: 0 0 0 10px;
+	margin: 1em 10% 0 0;
+	border-top: double 3px #af0000;
+	border-bottom: solid 1px #333333;
+	font-size: 1.5em;
+	color: #333333;
+}
+h4 {
+	padding: 0 0 0 10px;
+	margin: 1em 10% 0 1em;
+	border-top: solid 1px #af0000;
+	border-bottom: solid 1px #af0000;
+	font-size: 1.4em;
+	color: #333333;
+}
+
+/* total info */
+.updatedate {
+	text-align: right;
+}
+.mainschema {
+	text-align: right;
+}
+.sublink {
+	text-align: right;
+}
+
+/* keyword search */
+.keywordsearch {
+	padding: 0.7em 0 0.7em 0;
+}
+.searchmemo {
+	font-size: 0.9em;
+	color: #114488;
+}
+.suggestionarea {
+	padding: 0 0.2em 0.2em 0.2em;
+	margin: 0;
+	position: absolute;
+	zindex: 100;
+	background-color: #DDFFDD;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #CCCCCC;
+	list-style-type: none;
+}
+
+/* table */
+table {
+	border-collapse:collapse;
+}
+table, th {
+	border: 1px solid #555;
+}
+th {
+	background-color: #cc9;
+	font-size: 0.8em;
+}
+td {
+	border-bottom: 1px dotted #aaa;
+	border-left: 1px solid #555;
+	padding:2px;
+}
+.tablecomment {
+	font-size: 0.8em;
+	color: #3F7E5E;
+	padding:0 0 0.2em 1em;
+}
+.rownumhead {
+	text-align: center;
+	font-size: 0.4em;
+}
+.rownumcell {
+	text-align: center;
+	font-size: 0.4em;
+	color: #444;
+}
+.schemacell {
+	font-size: 0.8em;
+	white-space: nowrap;
+}
+.aliascell {
+	white-space: nowrap;
+}
+.flgcell {
+	text-align: center;
+}
+.flgplus {
+	font-size: 0.7em;
+}
+.typecell {
+	font-size: 0.6em;
+}
+.sizecell {
+	text-align: center;
+	font-size: 0.8em;
+}
+.defvalcell {
+	text-align: center;
+	font-size: 0.6em;
+}
+.relcell {
+	font-size: 0.7em;
+}
+.commentcell {
+	font-size: 0.7em;
+	color: #3F7E5E;
+}
+.subcell {
+	font-size: 0.6em;
+}
+.comcolcell {
+	color: #666;
+}
+.optcell {
+	font-style: italic;
+}
+.additionalpk {
+	font-style: italic;
+}
+.additionalfk {
+	font-style: italic;
+}
+.clstypecell {
+	text-align: center;
+	font-size: 0.8em;
+}
+.commentdesc {
+	color: #3F7E5E;
+}
+
+/* inner table */
+table.child {
+	margin: 3px;
+}
+table.child th {
+	font-size: 0.7em;
+}
+table.child, table.child td, table.child th {
+	border-top: none;
+	border-left: none;
+	border-bottom: 1px solid #aaa;
+	border-right: 1px solid #aaa;
+}
+.clsgroup {
+	font-size: 1.2em;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+/* table supplementary info */
+span.tableschema {
+	font-size: 0.6em;
+}
+span.bqpcount {
+	font-size: 0.5em;
+}
+dl.bqplist {
+	padding-left: 2em;
+}
+dl.bqplist dt {
+	display: list-item;
+	font-size: 1.3em;
+	margin-top: 0.3em;
+}
+dl.bqplist dd {
+	padding-left: 1em;
+}
+dl.bqplist dd pre {
+	font-size: 1.1em;
+}
+dl.bqplist dd.subinfo {
+	padding-left: 2em;
+}
+dl.bqplist dd.subinfo span.sqlap {
+	font-style: italic;
+	color: #002266;
+}
+dl.bqplist dd.subinfo span.file {
+	font-style: italic;
+	color: #002266;
+}
+dl.bqplist dd.subinfo span.ctet {
+	color: green;
+}
+dl.bqplist dd.subinfo span.pmb {
+	color: green;
+}
+dl.procedurelist {
+	padding-left: 2em;
+}
+dl.procedurelist dt {
+	display: list-item;
+	font-size: 1.3em;
+	margin-top: 0.3em;
+}
+dl.procedurelist dt span.type {
+	font-size: 0.7em;
+	color: green;
+}
+dl.procedurelist dd {
+	padding-left: 1em;
+}
+dl.procedurelist dd pre {
+	font-size: 1.1em;
+}
+dl.procedurelist dd.column {
+	font-style: italic;
+	padding-left: 2em;
+}
+dl.procedurelist dd.column span.attrs {
+	font-size: 0.7em;
+	color: #125699;
+}
+dl.procedurelist dd.column span.type {
+	font-size: 0.9em;
+	color: green;
+}
+dl.procedurelist dd.column pre {
+	padding-left: 1em;
+}
+	</style>
+</head>
+
+<body>
+<h1>Schema for attacklist-db (mysql)</h1>
+<p class="mainschema">generated from <strong>attacklistdb</strong></p>
+
+<h2>Table List</h2>
+<div class="keywordsearch">
+	<input type="text" id="incremental-search-field" tabindex=1 value="" placeholder="Table Search" />
+	<ul id="suggestion-list" class="suggestionarea"></ul>
+	<span class="searchmemo">*Push 'tab' (primary tab order)</span>
+</div>
+<table summary="Tables in the Schema">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>ForeignTable</th>
+		<th>ReferrerTable</th>
+		<th>TableComment</th>
+		<th>EntityName</th>
+	</tr>
+	</thead>
+	<tbody id="table-list-body">
+	<tr>
+		<td class="rownumcell">1</td>
+		<td><a href="#member" title="type=TABLE, primaryKey={MEMBER_ID}, nameLength=6, columnCount=2">MEMBER</a></td>
+		<td class="typecell">TABLE</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"><a href="#member_security" title="member_security_ibfk_1">MEMBER_SECURITY</a>, <a href="#tweet" title="tweet_ibfk_1">TWEET</a></td>
+		<td class="commentcell"> ���</td>
+		<td class="subcell">Member</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td><a href="#member_security" title="type=TABLE, primaryKey={}, nameLength=15, columnCount=2">MEMBER_SECURITY</a></td>
+		<td class="typecell">TABLE</td>
+		<td class="relcell"><a href="#member" title="member_security_ibfk_1">MEMBER</a></td>
+		<td class="relcell">&nbsp;</td>
+		<td class="commentcell"> ����Z�L�����e�B���</td>
+		<td class="subcell">MemberSecurity</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">3</td>
+		<td><a href="#tweet" title="type=TABLE, primaryKey={TWEET_ID}, nameLength=5, columnCount=3">TWEET</a></td>
+		<td class="typecell">TABLE</td>
+		<td class="relcell"><a href="#member" title="tweet_ibfk_1">MEMBER</a></td>
+		<td class="relcell">&nbsp;</td>
+		<td class="commentcell"> �c�C�[�g</td>
+		<td class="subcell">Tweet</td>
+	</tr>
+	</tbody>
+</table>
+
+  <h2 id="member" title="type=TABLE, primaryKey={MEMBER_ID}, nameLength=6, columnCount=2">
+MEMBER
+</h2>
+<p class="tablecomment">���</p>
+<table summary="Columns in MEMBER">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>PK</th>
+		<th>ID</th>
+		<th>UQ</th>
+		<th>IX</th>
+		<th>Not<br />Null</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Size</th>
+		<th>ForeignTable</th>
+		<th>ReferrerTable</th>
+		<th>Classification</th>
+		<th>ColumnComment</th>
+		<th>PropertyName</th>
+		<th>JavaType</th>
+	</tr>
+	</thead>
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="flgcell" title="PRIMARY">o</td>
+		<td class="flgcell">o</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="member_member_id">MEMBER_ID</td>
+		<td class="typecell">BIGINT</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell"><a href="#member_security" title="member_security_ibfk_1">MEMBER_SECURITY</a>,<br /><a href="#tweet" title="tweet_ibfk_1">TWEET</a>&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="commentcell"> ���ID</td>
+		<td class="subcell">memberId</td>
+		<td class="subcell">Long</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell" title="MAIL_ADDRESS(MAIL_ADDRESS)">o</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="member_mail_address">MAIL_ADDRESS</td>
+		<td class="typecell">VARCHAR</td>
+		<td class="sizecell"> 250 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="commentcell"> ���[���A�h���X</td>
+		<td class="subcell">mailAddress</td>
+		<td class="subcell">String</td>
+	</tr>
+</table>
+  <h2 id="member_security" title="type=TABLE, primaryKey={}, nameLength=15, columnCount=2">
+MEMBER_SECURITY
+</h2>
+<p class="tablecomment">����Z�L�����e�B���</p>
+<table summary="Columns in MEMBER_SECURITY">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>PK</th>
+		<th>ID</th>
+		<th>UQ</th>
+		<th>IX</th>
+		<th>Not<br />Null</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Size</th>
+		<th>ForeignTable</th>
+		<th>ReferrerTable</th>
+		<th>Classification</th>
+		<th>ColumnComment</th>
+		<th>PropertyName</th>
+		<th>JavaType</th>
+	</tr>
+	</thead>
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell" title="MEMBER_ID(MEMBER_ID)">o</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="member_security_member_id">MEMBER_ID</td>
+		<td class="typecell">BIGINT</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell"><a href="#member" title="member_security_ibfk_1">MEMBER</a>&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="commentcell"> ���ID</td>
+		<td class="subcell">memberId</td>
+		<td class="subcell">Long</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="member_security_password">PASSWORD</td>
+		<td class="typecell">VARCHAR</td>
+		<td class="sizecell"> 20 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="commentcell"> �p�X���[�h</td>
+		<td class="subcell">password</td>
+		<td class="subcell">String</td>
+	</tr>
+</table>
+  <h2 id="tweet" title="type=TABLE, primaryKey={TWEET_ID}, nameLength=5, columnCount=3">
+TWEET
+</h2>
+<p class="tablecomment">�c�C�[�g</p>
+<table summary="Columns in TWEET">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>PK</th>
+		<th>ID</th>
+		<th>UQ</th>
+		<th>IX</th>
+		<th>Not<br />Null</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Size</th>
+		<th>ForeignTable</th>
+		<th>ReferrerTable</th>
+		<th>Classification</th>
+		<th>ColumnComment</th>
+		<th>PropertyName</th>
+		<th>JavaType</th>
+	</tr>
+	</thead>
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="flgcell" title="PRIMARY">o</td>
+		<td class="flgcell">o</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="tweet_tweet_id">TWEET_ID</td>
+		<td class="typecell">BIGINT</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="commentcell"> �c�C�[�g�CD</td>
+		<td class="subcell">tweetId</td>
+		<td class="subcell">Long</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td id="tweet_message">MESSAGE</td>
+		<td class="typecell">VARCHAR</td>
+		<td class="sizecell"> 140 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="commentcell"> �߂����[��</td>
+		<td class="subcell">message</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">3</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell" title="MEMBER_ID(MEMBER_ID)">o</td>
+		<td class="flgcell">*</td>
+		<td id="tweet_member_id">MEMBER_ID</td>
+		<td class="typecell">BIGINT</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell"><a href="#member" title="tweet_ibfk_1">MEMBER</a>&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="commentcell"> ���ID</td>
+		<td class="subcell">memberId</td>
+		<td class="subcell">Long</td>
+	</tr>
+</table>
+
+
+<script>
+/**
+ * Incremental Search contributed by makotot (Thanks!)
+ */
+
+function Incremental (targetInput, dist) {
+	this.targetInput = targetInput;
+	this.targetParent = this.targetInput.parentNode;
+	this.dist = dist;
+	this.query = '';
+	this.suggestionIdx = 0;
+	this.currentSuggestion = '';
+}
+
+Incremental.prototype = {
+
+	/**
+	 * @method init
+	 */
+	init: function () {
+		var dataList = this.getDataList();
+
+		this.distDataList = dataList.distList;
+		this.sectionList = dataList.sectionList;
+		this.buildSuggestList();
+		this.attachEvent();
+	},
+
+	/**
+	 * @method buildSuggetList
+	 */
+	buildSuggestList: function () {
+		var fragment = document.createDocumentFragment(),
+			ul = document.getElementById('suggestion-list'),
+			li, anchor;
+
+		this.ul = ul;
+		for (var i = 0, max = this.distDataList.length; i < max; i++) {
+			li = document.createElement('li');
+			li.style.display = 'none';
+			anchor = document.createElement('a');
+			anchor.href = this.sectionList[i];
+
+			if (document.body.dataset) {
+				anchor.dataset.name = this.distDataList[i];
+			} else {
+				anchor.setAttribute('data-name', this.distDataList[i]);
+			}
+
+			this.util.setElemTxt(anchor, this.distDataList[i]);
+
+			li.appendChild(anchor);
+			fragment.appendChild(li);
+		}
+		ul.appendChild(fragment);
+
+		this.attachSuggestionEvent();
+	},
+
+	/**
+	 * @method attachEvent
+	 */
+	attachEvent: function () {
+		var self = this,
+			eventHandler = function () {
+				self.displaySuggestion();
+			},
+			eventName = ('oninput' in window) ? 'input' : 'propertychange';
+
+		this.util.addEvent(this.targetInput, eventName, eventHandler);
+	},
+
+	/**
+	 * @method displaySuggestion
+	 */
+	displaySuggestion: function () {
+		this.query = (this.util.trim(this.targetInput.value)).toLowerCase();
+
+		var judgeList = [],
+			i, j, max;
+
+		this.resetSuggestion();
+
+		var visibleList;
+
+		if (this.query.length) {
+			for (i = 0, max = this.distDataList.length; i < max; i++) {
+				judgeList.push(this.distDataList[i].indexOf(this.query) > -1);
+			}
+			for (j = 0; j < max; j++) {
+				this.ul.childNodes[j].style.display = judgeList[j] ? '' : 'none';
+			}
+
+			visibleList = this.filterVisibleChild();
+
+			if (visibleList.length) {
+				visibleList[0].style.backgroundColor = '#CCCCCC';
+			}
+		} else {
+			for (i = 0, max = this.distDataList.length; i < max; i++) {
+				this.ul.childNodes[i].style.display = 'none';
+			}
+		}
+	},
+
+	/**
+	 * @method getDataList
+	 */
+	getDataList: function () {
+		var tr = this.dist.getElementsByTagName('tr'),
+			distDataList = [],
+			sectionIdList = [];
+
+        var nameIndex = 1; // number, name
+		for (var i = 0, max = tr.length; i < max; i++) {
+			distDataList.push(this.util.getElemTxt(tr[i].getElementsByTagName('td')[nameIndex]).toLowerCase());
+			sectionIdList.push(tr[i].getElementsByTagName('td')[nameIndex].getElementsByTagName('a')[0].getAttribute('href'));
+		}
+
+		return {
+			distList: distDataList,
+			sectionList: sectionIdList
+		};
+	},
+
+	/**
+	 * @method attachSuggestionEvent
+	 */
+	attachSuggestionEvent: function () {
+		var self = this;
+
+		this.util.addEvent(this.targetInput, 'keyup', function (e) {
+			self.selectSuggestion(e);
+			self.setInputValue(e);
+		});
+		this.util.addEvent(this.targetInput, 'blur', function () {
+			setTimeout(function () {
+				self.resetSuggestion();
+			}, 100);
+		});
+	},
+
+	/**
+	 * @method selectSuggestion
+	 */
+	selectSuggestion: function (ev) {
+		var keyCode = ev.keyCode,
+			visibleChildNodes = this.filterVisibleChild(),
+			prevIdx;
+
+		if (keyCode === 38 || keyCode === 40) {
+
+			if (visibleChildNodes.length) {
+				prevIdx = this.suggestionIdx;
+
+				if (keyCode === 40 && this.suggestionIdx < visibleChildNodes.length - 1) {
+					this.suggestionIdx++;
+				}
+
+				if (keyCode === 38 && this.suggestionIdx > 0) {
+					this.suggestionIdx--;
+				}
+
+				if (prevIdx > -1) {
+					visibleChildNodes[prevIdx].style.backgroundColor = '';
+				}
+
+				visibleChildNodes[this.suggestionIdx].style.backgroundColor = '#CCCCCC';
+				this.currentSuggestion = this.util.getElemTxt(visibleChildNodes[this.suggestionIdx]);
+
+			} else if (this.query.length) {
+
+				this.displaySuggestion();
+			}
+		}
+
+		if (!this.query.length) {
+			this.resetSuggestion();
+		}
+	},
+
+	/**
+	 * @method setInputValue
+	 * @param ev {Object}
+	 */
+	setInputValue: function (ev) {
+		var keyCode = ev.keyCode,
+			visibleChildNodes = this.filterVisibleChild(),
+			currentSuggestionTxt,
+			selectedSection;
+
+		if (visibleChildNodes.length) {
+			currentSuggestionTxt = this.util.getElemTxt(visibleChildNodes[this.suggestionIdx]);
+
+			if (keyCode === 13) {
+				this.targetInput.value = currentSuggestionTxt;
+				selectedSection = this.getSelectedSection(visibleChildNodes[this.suggestionIdx]);
+				this.clearSuggestion();
+				this.scrollToSelectedSection(selectedSection);
+				this.setHash(selectedSection);
+			}
+		}
+	},
+
+	/**
+	 * @method filterVisibleChild
+	 */
+	filterVisibleChild: function () {
+		var visibleChildNodes = [];
+
+		for (var i = 0, max = this.ul.childNodes.length; i < max; i++) {
+			if (this.ul.childNodes[i].style.display !== 'none') {
+				visibleChildNodes.push(this.ul.childNodes[i]);
+			}
+		}
+
+		return visibleChildNodes;
+	},
+
+	/**
+	 * @method clearSuggestion
+	 */
+	clearSuggestion: function () {
+		for (var i = 0, max = this.ul.childNodes.length; i < max; i++) {
+			this.ul.childNodes[i].style.display = 'none';
+			this.ul.childNodes[i].style.backgroundColor = '';
+		}
+	},
+
+	/**
+	 * @method resetSuggestion
+	 */
+	resetSuggestion: function () {
+		this.clearSuggestion();
+
+		this.suggestionIdx = 0;
+	},
+
+	/**
+	 * @method getToSelectedSection
+	 * @param suggestionNode {Object}
+	 * @return selectedIdx {Number}
+	 */
+	getSelectedSection: function (suggestionNode) {
+		var selectedIdx;
+
+		for (var i = 0, max = this.ul.childNodes.length; i < max; i++) {
+			if (this.ul.childNodes[i] === suggestionNode) {
+				selectedIdx = i;
+				break;
+			}
+		}
+
+		return selectedIdx;
+	},
+
+	/**
+	 * @method scrollToSelectedSection
+	 * @param idx {Number}
+	 */
+	scrollToSelectedSection: function (idx) {
+		var selectedId = (this.sectionList[idx]).split('#')[1],
+			targetSection = document.getElementById(selectedId);
+
+		window.scrollTo(0, targetSection.offsetTop);
+		this.targetInput.blur();
+	},
+
+	/**
+	 * @method setHash
+	 */
+	setHash: function (idx) {
+		var selectedId = this.sectionList[idx];
+
+		window.location.hash = selectedId;
+	}
+};
+
+
+Incremental.prototype.util = {
+
+	addEvent: function (elem, ev, fn) {
+		if (elem.addEventListener) {
+			elem.addEventListener(ev, fn, false);
+		} else if (elem.attachEvent) {
+			elem.attachEvent('on' + ev, fn);
+		} else {
+			elem['on' + ev] = fn;
+		}
+	},
+
+	trim: function (txt) {
+		return (String.prototype.trim) ? txt.trim() : txt.replace(/^\s+|\s+$/g, '');
+	},
+
+	getElemTxt: function (elem) {
+		return (elem.innerText !== undefined) ? elem.innerText : elem.textContent;
+	},
+
+	setElemTxt: function (elem, data) {
+		return (elem.innerText !== undefined) ? (elem.innerText = data) : (elem.textContent = data);
+	}
+};
+
+var searcher = new Incremental(document.getElementById('incremental-search-field'), document.getElementById('table-list-body'));
+searcher.init();
+</script>
+</body>
+</html>

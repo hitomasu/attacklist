@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE components PUBLIC "-//SEASAR2.1//DTD S2Container//EN"
+    "http://www.seasar.org/dtd/components21.dtd">
+
+<components namespace="dbflute">
+    <include path="j2ee.dicon"/>
+
+    <!-- The components of DBFlute Runtime. -->
+    <component name="introduction" class="jp.attacklist.common.entity.allcommon.DBFluteInitializer"/>
+    <component name="invokerAssistant" class="jp.attacklist.common.entity.allcommon.ImplementedInvokerAssistant"/>
+    <component name="commonColumnAutoSetupper" class="jp.attacklist.common.entity.allcommon.ImplementedCommonColumnAutoSetupper"/>
+    <component name="behaviorSelector" class="jp.attacklist.common.entity.allcommon.ImplementedBehaviorSelector"/>
+    <component name="behaviorCommandInvoker" class="org.seasar.dbflute.bhv.core.BehaviorCommandInvoker"/>
+
+    <!-- The components of Behavior. -->
+    <component name="memberBhv" class="jp.attacklist.common.entity.exbhv.MemberBhv"/>
+    <component name="memberSecurityBhv" class="jp.attacklist.common.entity.exbhv.MemberSecurityBhv"/>
+    <component name="tweetBhv" class="jp.attacklist.common.entity.exbhv.TweetBhv"/>
+</components>

@@ -1,0 +1,88 @@
+map:{
+    ; 2014/02/16 19:27:50 = map:{
+        ; diffDate = 2014/02/16 19:27:50
+        ; tableCount = map:{
+            ; next = 3
+            ; previous = 1
+        }
+        ; tableDiff = map:{
+            ; MEMBER_SECURITY = map:{
+                ; tableName = MEMBER_SECURITY
+                ; diffType = ADD
+            }
+            ; TWEET = map:{
+                ; tableName = TWEET
+                ; diffType = ADD
+            }
+            ; MEMBER = map:{
+                ; tableName = MEMBER
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; MAIL_ADDRESS = map:{
+                        ; columnName = MAIL_ADDRESS
+                        ; diffType = ADD
+                    }
+                    ; MAIN_MAIL_ADDRESS = map:{
+                        ; columnName = MAIN_MAIL_ADDRESS
+                        ; diffType = DELETE
+                    }
+                    ; SUB_MAIL_ADDRESS = map:{
+                        ; columnName = SUB_MAIL_ADDRESS
+                        ; diffType = DELETE
+                    }
+                }
+                ; uniqueKeyDiff = map:{
+                    ; MAIL_ADDRESS = map:{
+                        ; constraintName = MAIL_ADDRESS
+                        ; diffType = ADD
+                    }
+                    ; MAIN_MAIL_ADDRESS = map:{
+                        ; constraintName = MAIN_MAIL_ADDRESS
+                        ; diffType = DELETE
+                    }
+                    ; SUB_MAIL_ADDRESS = map:{
+                        ; constraintName = SUB_MAIL_ADDRESS
+                        ; diffType = DELETE
+                    }
+                }
+            }
+        }
+    }
+    ; 2014/02/16 19:18:36 = map:{
+        ; diffDate = 2014/02/16 19:18:36
+        ; tableDiff = map:{
+            ; MEMBER = map:{
+                ; tableName = MEMBER
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; MAIN_MAIL_ADDRESS = map:{
+                        ; columnName = MAIN_MAIL_ADDRESS
+                        ; diffType = ADD
+                    }
+                    ; SUB_MAIL_ADDRESS = map:{
+                        ; columnName = SUB_MAIL_ADDRESS
+                        ; diffType = ADD
+                    }
+                    ; MAIL_ADDRESS = map:{
+                        ; columnName = MAIL_ADDRESS
+                        ; diffType = DELETE
+                    }
+                }
+                ; uniqueKeyDiff = map:{
+                    ; MAIN_MAIL_ADDRESS = map:{
+                        ; constraintName = MAIN_MAIL_ADDRESS
+                        ; diffType = ADD
+                    }
+                    ; SUB_MAIL_ADDRESS = map:{
+                        ; constraintName = SUB_MAIL_ADDRESS
+                        ; diffType = ADD
+                    }
+                    ; MAIL_ADDRESS = map:{
+                        ; constraintName = MAIL_ADDRESS
+                        ; diffType = DELETE
+                    }
+                }
+            }
+        }
+    }
+}

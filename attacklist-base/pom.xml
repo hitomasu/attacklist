@@ -14,7 +14,7 @@
 		<!-- Application -->
 		<app.name>attacklist</app.name>
 		<app.version>1.0.0-SNAPSHOT</app.version>
-		<app.group.id>org.leihauoli</app.group.id>
+		<app.group.id>jp.attacklist</app.group.id>
 
 		<!-- Main Framework -->
 		<mysql.jdbc.version>5.1.19</mysql.jdbc.version>
@@ -27,7 +27,7 @@
 		<taglibs.version>1.1.2</taglibs.version>
 		<commons.logging.version>1.1.1</commons.logging.version>
 		<log4j.version>1.2.14</log4j.version>
-		<dbflute.version>1.0.0</dbflute.version>
+		<dbflute.version>1.0.5B</dbflute.version>
 
 		<!-- Partner Library -->
 		<jsonic.version>1.2.6</jsonic.version>

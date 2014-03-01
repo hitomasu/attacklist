@@ -202,6 +202,13 @@
 				<artifactId>log4j</artifactId>
 			</dependency>
 
+			<!-- s2robot -->
+			<dependency>
+		      <groupId>org.seasar.robot</groupId>
+		      <artifactId>s2-robot</artifactId>
+		    </dependency>
+
+
 			<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 			<!--                                                           Partner Library -->
 			<!--                                                           = = = = = = = = -->

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE components PUBLIC "-//SEASAR//DTD S2Container 2.4//EN"
+	"http://www.seasar.org/dtd/components24.dtd">
+<components>
+	<component name="intervalController" class="org.seasar.robot.interval.impl.DefaultIntervalController" instance="prototype">
+	    <arg>#{
+            "delayMillisBeforeProcessing" : 0L,
+            "delayMillisAfterProcessing" : 0L,
+            "delayMillisAtNoUrlInQueue" : 500L,
+            "delayMillisForWaitingNewUrl" : 1000L
+        }</arg>
+	</component>
+</components>

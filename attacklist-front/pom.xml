@@ -208,6 +208,13 @@
 		      <artifactId>s2-robot</artifactId>
 		    </dependency>
 
+			<!-- jsoup -->
+		    <dependency>
+    		  <groupId>org.jsoup</groupId>
+    		  <artifactId>jsoup</artifactId>
+    		</dependency>
+
+
 
 			<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 			<!--                                                           Partner Library -->

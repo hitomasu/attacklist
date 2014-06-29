@@ -28,7 +28,8 @@
 		<commons.logging.version>1.1.1</commons.logging.version>
 		<log4j.version>1.2.14</log4j.version>
 		<dbflute.version>1.0.5B</dbflute.version>
-		<s2robot.version>0.4.2</s2robot.version>
+		<s2robot.version>0.6.2</s2robot.version>
+		<jsoup.version>1.7.3</jsoup.version>
 
 		<!-- Partner Library -->
 		<jsonic.version>1.2.6</jsonic.version>
@@ -222,6 +223,13 @@
 		      <artifactId>s2-robot</artifactId>
 		      <version>${s2robot.version}</version>
 		    </dependency>
+
+			<!-- jsoup -->
+		    <dependency>
+    		  <groupId>org.jsoup</groupId>
+    		  <artifactId>jsoup</artifactId>
+    		  <version>${jsoup.version}</version>
+			</dependency>
 
 			<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 			<!--                                                           Partner Library -->

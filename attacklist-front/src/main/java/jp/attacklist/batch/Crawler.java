@@ -4,6 +4,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.Resource;
+
+import jp.attacklist.batch.CrawlerTest;
+
+import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.seasar.framework.container.S2Container;
@@ -20,17 +25,25 @@ public abstract class Crawler implements Runnable {
 	protected S2Container s2container;
 	protected S2Robot s2Robot;
 	protected DataService dataService;
+	protected Logger log = Logger.getLogger(getChildClazz());
 
-	/* クロールの起点となるURL */
+	/** クロールの起点となるURL */
 	protected String url;
-	/* クロール対象URLのフィルタリング(正規表現) */
+	/** クロール対象URLのフィルタリング(正規表現) */
 	protected String includeFilterRegex;
-	/* クロール除外URLのフィルタリング(正規表現) */
+	/** クロール除外URLのフィルタリング(正規表現) */
 	protected String excludeFilterRegex;
-	/* 企業情報の詳細ページにマッチするURL(正規表現) */
+	/** 企業情報の詳細ページにマッチするURL(正規表現) */
 	protected String detailMatchRegex;
 
 	/**
+	 * 実際に起動しているクラスのCalssNameを返します
+	 * @return CalssName
+	 */
+	abstract protected Class<? extends Crawler> getChildClazz();
+
+	/**
+	 * コンストラクタ
 	 * @param url クロールの起点となるURL
 	 * @param includeFilterRegex クロール対象URLのフィルタリング(正規表現)
 	 * @param excludeFilterRegex クロール除外URLのフィルタリング(正規表現)
@@ -52,24 +65,30 @@ public abstract class Crawler implements Runnable {
 	 */
 	@Override
 	public void run() {
-		crawling();
+		startCrawling();
 	}
 
 	/**
 	 * エリア掲載ページ数分のクローリングをします。
 	 */
-	protected void crawling() {
+	protected void startCrawling() {
 
+		//エラー時のログ出力用
+		String crawlUrl = "Before start";
 		try {
 			// クロールする最大ページ数を取得
 			int maxPageCount = getMaxPageNumber(url);
+			//ページ数分Crawl
 			for (int i = 1; i <= maxPageCount; i++) {
-				//ページ数分Crawl
-				doCrawl(url + "?page=" + String.valueOf(i));
+				//ページング指定されたURLを取得
+				crawlUrl = getPagingUrl(i);
+				doCrawl(crawlUrl);
 			}
 		} catch (IOException e) {
-			//TODO どこまでクロールが成功しているかをログで出力
+			//どこまでクロールが成功しているかをログで出力
 			e.printStackTrace();
+			log.error(crawlUrl);
+
 		} finally {
 		}
 
@@ -95,21 +114,27 @@ public abstract class Crawler implements Runnable {
 				if (accessResult.getUrl().matches(detailMatchRegex)) {
 					Document document = Jsoup.parse(data.getDataAsString());
 					parseLise.add("----------------------------------------");
-					parseLise.add(getCompanyName(document));
-					parseLise.add(getCompanyAddress(document));
+					parseLise.add("掲載媒体名：" + getMediaName());
+					parseLise.add("企業名：" + getCompanyName(document));
+					parseLise.add("所在地：" + getCompanyAddress(document));
 
-					parseLise.add(getTelNumber(document).getFirst());
-					parseLise.add(getTelNumber(document).getSecond());
+					parseLise.add("電話番号1：" + getTelNumber(document).getFirst());
+					parseLise.add("電話番号2：" + getTelNumber(document).getSecond());
 
-					parseLise.add(getBusinessLineup(document));
-					parseLise.add(getJobs(document));
+					parseLise.add("事業内容：" + getBusinessLineup(document));
+					parseLise.add("募集職種：" + getJobs(document));
+					parseLise.add("掲載エリア：" + getArea(document));
+					parseLise.add("掲載開始日：" + getStartDate(document));
+					parseLise.add("掲載終了日：" + getEndDate(document));
+					parseLise.add("写真点数：" + String.valueOf(getCountUsePhotographs(document)));
+//					parseLise.add("本文：" + getBodyText(document));
 					parseLise.add("----------------------------------------");
 				}
 			}
 		});
 		//TODO データアクセスクラスが出来るまでの仮処理
 		for (String str : parseLise) {
-			System.out.println(str);
+			log.debug(str);
 		}
 
 		// クロール結果の消去
@@ -134,6 +159,27 @@ public abstract class Crawler implements Runnable {
 	}
 
 	/**
+	 *クロール対象のURLをページング指定を追加します。
+	 * @param pagingNumber
+	 * @return ページング指定済みのクロール対象URL
+	 */
+	abstract protected String getPagingUrl(int pagingNumber);
+
+	/**
+	 * 掲載媒体名を返します。
+	 * @return　掲載媒体名
+	 */
+	abstract protected String getMediaName();
+
+	/**
+	 * 引数で受けたHTMLドキュメントを解析して原稿本文を返します。
+	 * @param document 解析するHTMLドキュメント
+	 * @return　原稿本文
+	 */
+	abstract protected String getBodyText(Document document);
+
+
+	/**
 	 * エリア別ページの最大ページ数を返します。
 	 * @param url エリア別ページのURL
 	 * @return 最大ページ番号
@@ -147,6 +193,14 @@ public abstract class Crawler implements Runnable {
 	 * @return　企業名
 	 */
 	abstract protected String getCompanyName(Document document);
+
+	/**
+	 * 引数で受けたHTMLドキュメントを解析して企業名（カナ）を返します。
+	 * @param document 解析するHTMLドキュメント
+	 * @return　企業名（カナ）
+	 */
+	abstract protected String getCompanyNameKana(Document document);
+
 
 	/**
 	 * 引数で受けたHTMLドキュメントを解析して電話番号をペアの値で返します。
@@ -175,5 +229,34 @@ public abstract class Crawler implements Runnable {
 	 * @return 募集職種
 	 */
 	abstract protected String getJobs(Document document);
+
+	/**
+	 * 引数で受けたHTMLドキュメントを解析して掲載エリアを返します。
+	 * @param document 解析するHTMLドキュメント
+	 * @return 掲載エリア
+	 */
+	abstract protected String getArea(Document document);
+
+	/**
+	 * 引数で受けたHTMLドキュメントを解析して掲載開始日を返します。
+	 * @param document 解析するHTMLドキュメント
+	 * @return 掲載開始日
+	 */
+	abstract protected String getStartDate(Document document);
+
+	/**
+	 * 引数で受けたHTMLドキュメントを解析して掲載終了日を返します。
+	 * @param document 解析するHTMLドキュメント
+	 * @return 掲載終了日
+	 */
+	abstract protected String getEndDate(Document document);
+
+
+	/**
+	 * 引数で受けたHTMLドキュメントを解析して原稿内の写真数を返します。
+	 * @param document 解析するHTMLドキュメント
+	 * @return 原稿内の写真数
+	 */
+	abstract protected int getCountUsePhotographs(Document document);
 
 }

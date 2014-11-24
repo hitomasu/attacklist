@@ -7,19 +7,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import jp.attacklist.batch.CrawlerTest;
-
 import org.apache.commons.lang.time.DateUtils;
-import org.apache.xalan.templates.ElemNumber;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.seasar.extension.jdbc.dialect.FirebirdDialect;
 import org.seasar.framework.util.tiger.Pair;
 
 /**

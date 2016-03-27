@@ -30,6 +30,7 @@
 		<dbflute.version>1.0.5B</dbflute.version>
 		<s2robot.version>0.6.2</s2robot.version>
 		<jsoup.version>1.7.3</jsoup.version>
+		<s2chronos.version>1.0.0</s2chronos.version>
 
 		<!-- Partner Library -->
 		<jsonic.version>1.2.6</jsonic.version>
@@ -231,6 +232,13 @@
     		  <version>${jsoup.version}</version>
 			</dependency>
 
+			<!-- s2chronos -->
+			<dependency>
+      			<groupId>org.seasar.chronos</groupId>
+      			<artifactId>s2chronos-core</artifactId>
+      			<version>${s2chronos.version}</version>
+    		</dependency>
+
 			<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 			<!--                                                           Partner Library -->
 			<!--                                                           = = = = = = = = -->
@@ -330,7 +338,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.5.1</version>
+				<version>3.1</version>
 				<configuration>
 					<source>1.7</source>
 					<target>1.7</target>

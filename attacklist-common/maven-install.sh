@@ -7,4 +7,4 @@ echo ""
 echo "==============================================================================="
 echo "                                                         Install 'Common' project"
 echo "                                                         ======================"
-mvn -e install
+JAVA_HOME=`/usr/libexec/java_home -v 1.7` mvn -e install

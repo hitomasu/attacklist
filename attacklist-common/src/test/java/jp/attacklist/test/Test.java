@@ -1,5 +1,6 @@
 package jp.attacklist.test;
 
+
 import java.util.List;
 
 import javax.annotation.Resource;
